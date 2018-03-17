@@ -1,0 +1,98 @@
+
+// ------------------------------------------------------------------------
+// Variables
+// ------------------------------------------------------------------------
+
+$sidemenu--background         : $color--black;
+$sidemenu--border-color       : rgba($color--white, .05);
+$sidemenu--color              : rgba($color--white, .75);
+$sidemenu--hover--color       : $color--accent;
+$sidemenu--duration           : .75s;
+$sidemenu--easing             : cubic-bezier(0.19, 1, 0.22, 1);
+$sidemenu--max-width          : rem(275px);
+
+$sidemenu__items--margin-top  : rem(55px);  // header outer height
+
+$sidemenu__item--border-color : rgba(128,128,128, .15);
+$sidemenu__item--duration     : .2s;
+$sidemenu__item--easing       : "ease-in-out";
+
+
+// ------------------------------------------------------------------------
+// Structure
+// ------------------------------------------------------------------------
+
+.sidemenu {
+  display: block;
+  border-left: rem(1px) solid;
+  padding: 1.25rem;
+  position: fixed;
+  top: 0;
+  right: -$sidemenu--max-width;
+  height: 100vh;
+  width: 100%;
+  max-width: $sidemenu--max-width;
+  z-index: 1000;
+
+  @inlcude bp-min-lg {
+    display: none;
+  }
+}
+
+.sidemenu__items {
+  margin-top: $sidemenu__items--margin-top;
+}
+
+.sidemenu__item {
+  display: block;
+  border-bottom: rem(1px) solid;
+  padding: 1rem 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.sidemenu__pusher {
+  position: relative;
+  top: 0;
+  right: 0;
+}
+
+
+// ------------------------------------------------------------------------
+// Font & Color
+// ------------------------------------------------------------------------
+
+.sidemenu {
+  background: $sidemenu--background;
+  border-color: $sidemenu--border-color;
+  color: $sidemenu--color;
+}
+
+.sidemenu__item {
+  border-color: $sidemenu__item--border-color;
+  color: $sidemenu--color;
+
+  @include transition("color", $sidemenu__item--duration, $sidemenu__item--easing);
+
+  &:hover {
+    color: $sidemenu--hover--color;
+  }
+}
+
+
+// ------------------------------------------------------------------------
+// Effects
+// ------------------------------------------------------------------------
+
+.sidemenu,
+.sidemenu__pusher {
+  @include transition("right", $sidemenu--duration, $sidemenu--easing);
+}
+
+.sidemenu--visible {
+  right: 0;
+}
+
+.sidemenu__pusher--pushed {
+  right: $sidemenu--max-width;
+}
