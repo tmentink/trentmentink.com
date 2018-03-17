@@ -4,6 +4,7 @@
 //
 @import "../base/reset";
 @import "../base/breakpoints";
+@import "../base/color";
 @import "../base/font";
 @import "../base/transform";
 @import "../base/transition";
@@ -11,4 +12,8 @@
 //
 // Main
 //
+@import "header";
 @import "hero";
+@import "about";
+@import "projects";
+@import "contact";

@@ -14,6 +14,24 @@
     </head>
     <body>
 
+      <!-- Header
+      =========================================== -->
+      <div id="header" class="header">
+        <div class="header__container">
+          <a class="header__brand" href=".">Trent Mentink</a>
+            <div class="header__items">
+              <div class="header__item" data-scrollto="#about">About</div>
+              <a class="header__item" href="https://drive.google.com/file/d/0B8oy1SPl4y8uX2FKSExWY2dIbm8/view?usp=sharing" target="_blank">Resume</a>
+              <div class="header__item" data-scrollto="#projects">Projects</div>
+              <div class="header__item" data-scrollto="#contact">Contact</div>
+            </div>
+          <div id="btnSideMenu" class="header__icon">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </div>
+
+
       <!-- Hero
       =========================================== -->
       <div id="hero" class="hero">
@@ -25,12 +43,37 @@
             Hi, I'm Trent. I design & build <br/>
             <span>web applications</span>.
           </h1>
-          <span class="hero__button">Yes, I'm available for hire</span>
+          <span class="hero__button" data-scrollto="#contact">
+            Yes, I'm available for hire
+          </span>
         </div>
-        <div class="hero__down-arrow">
+        <div class="hero__down-arrow" data-scrollto="#about">
           <div>Learn more about what I do</div>
           <i class="fas fa-chevron-down"></i>
         </div>
+      </div>
+
+
+      <!-- About
+      =========================================== -->
+      <div id="about">
+        <h1>About Me</h1>
+      </div>
+
+
+      <!-- Projects
+      =========================================== -->
+      <div id="projects">
+        <h1>My Projects</h1>
+      </div>
+
+
+      <!-- Contact
+      =========================================== -->
+      <div id="contact">
+        <h1>Want to work together?</h1>
+        <p>I'm currently accepting new projects and would love to hear about yours.</p>
+        <p>Please send me an email with the details.</p>
       </div>
 
 

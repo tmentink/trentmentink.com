@@ -123,7 +123,86 @@ var BP = {
 
     return SelectorCache[cacheKey];
   };
+
+  // ----------------------------------------------------------------------
+  // Easings
+  // ----------------------------------------------------------------------
+
+  $.easing.easeInOutExpo = function (x) {
+    return x === 0 ? 0 : x === 1 ? 1 : x < 0.5 ? Math.pow(2, 20 * x - 10) / 2 : (2 - Math.pow(2, -20 * x + 10)) / 2;
+  };
 }();
+
+!function () {
+  "use strict";
+
+  // ----------------------------------------------------------------------
+  // Constants
+  // ----------------------------------------------------------------------
+
+  var DATA_ATTR = "data-scrollto";
+  var DURATION = 1500;
+  var EASING = "easeInOutExpo";
+
+  var Selector = {
+    HTML_BODY: "html, body"
+
+    // ----------------------------------------------------------------------
+    // Smooth Scroll
+    // ----------------------------------------------------------------------
+
+  };$cache(document).on("click", "[" + DATA_ATTR + "]", function () {
+    var target = $(this).attr(DATA_ATTR);
+    var $target = $(target);
+
+    if ($target) {
+      $cache(Selector.HTML_BODY).stop().animate({
+        scrollTop: $target.offset().top - Header.getHeight()
+      }, DURATION, EASING);
+    }
+  });
+}();
+
+var Header = function (Header) {
+  "use strict";
+
+  // ----------------------------------------------------------------------
+  // Constants
+  // ----------------------------------------------------------------------
+
+  var ClassName = {
+    ACTIVE: "header--active"
+  };
+
+  var Selector = {
+    HEADER: "#header",
+    HERO: "#hero",
+    HERO_HEADER: ".hero__header"
+
+    // ----------------------------------------------------------------------
+    // Public Methods
+    // ----------------------------------------------------------------------
+
+  };Header.getHeight = function () {
+    return $cache(Selector.HEADER).height();
+  };
+
+  Header.toggleActiveStyles = function () {
+    var heroOffset = Hero.getHeaderTop() - 100;
+    var toggle = $cache(document).scrollTop() >= heroOffset;
+    $cache(Selector.HEADER).toggleClass(ClassName.ACTIVE, toggle);
+  };
+
+  // ----------------------------------------------------------------------
+  // Init
+  // ----------------------------------------------------------------------
+
+  Header.init = function () {
+    $cache(document).on("scroll", Header.toggleActiveStyles);
+  };
+
+  return Header;
+}(Header || (Header = {}));
 
 var Hero = function (Hero) {
   "use strict";
@@ -214,6 +293,7 @@ var Hero = function (Hero) {
   // ----------------------------------------------------------------------
 
   $(document).ready(function () {
+    Header.init();
     Hero.init();
   });
 }();

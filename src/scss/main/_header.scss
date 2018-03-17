@@ -1,0 +1,166 @@
+
+// ------------------------------------------------------------------------
+// Variables
+// ------------------------------------------------------------------------
+
+//
+// initial state
+//
+$header--background             : transparent;
+$header--border-color           : transparent;
+$header--color                  : $color--white;
+$header--duration               : .5s;
+$header--easing                 : "ease";
+$header--font-size              : rem(18px);
+
+$header__brand--color           : $color--accent;
+
+$header__item--hover--color     : $header--color;
+$header__item--unfocused--color : rgba($header--color, .5);
+
+//
+// active state
+//
+$header--active--background             : rgba($header--color, .95);
+$header--active--border-color           : rgba($color--black, .25);
+$header--active--color                  : $color--black;
+
+$header__item--active--hover--color     : $header--active--color;
+$header__item--active--unfocused--color : rgba($header--active--color, .5);
+
+
+// ------------------------------------------------------------------------
+// Structure
+// ------------------------------------------------------------------------
+
+.header {
+  display: flex;
+  border-bottom: rem(1px) solid;
+  padding: 1rem 0rem;
+  position: fixed;
+  width: 100vw;
+  z-index: 1001;
+
+  @include bp-min-lg {
+    text-align: center;
+  }
+}
+
+.header__container {
+  display: flex;
+  margin: 0 auto;
+  max-width: rem(1200px);
+  width: 100%;
+  justify-content: space-between;
+}
+
+.header__items {
+  display: none;
+  width: 100%;
+
+  @include bp-min-lg {
+    display: flex;
+    flex: 2;
+  }
+}
+
+.header__brand,
+.header__item,
+.header__icon {
+  padding: 1rem;
+  align-self: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.header__brand {
+  width: rem(250px);
+}
+
+.header__item {
+  flex: 1 0 auto;
+}
+
+.header__icon {
+  @include bp-min-lg {
+    display: none;
+  }
+}
+
+
+// ------------------------------------------------------------------------
+// Font & Color
+// ------------------------------------------------------------------------
+
+.header {
+  background: $header--background;
+  border-color: $header--border-color;
+  color: $header--color;
+
+  font-size: $header--font-size;
+  font-weight: bold;
+}
+
+.header__brand {
+  color: $header__brand--color;
+}
+
+.header__item {
+  color: $header--color;
+}
+
+.header__item,
+.header__icon {
+  @include transition("color", 0.2s, "ease-in-out");
+}
+
+//
+// Hover Colors
+//
+.header {
+  &:hover {
+    .header__item {
+      color: $header__item--unfocused--color;
+    }
+  }
+
+  .header__item:hover {
+    color: $header__item--hover--color;
+  }
+}
+
+//
+// Active Colors
+//
+.header--active {
+  .header__brand,
+  .header__item {
+    color: $header--active--color;
+  }
+
+  &:hover {
+    .header__item {
+      color: $header__item--active--unfocused--color;
+    }
+  }
+
+  .header__item:hover {
+    color: $header__item--active--hover--color;
+  }
+}
+
+
+// ------------------------------------------------------------------------
+// Effects
+// ------------------------------------------------------------------------
+
+.header {
+  @include transition("background, border-color, padding", $header--duration, $header--easing);
+}
+
+.header--active {
+  background: $header--active--background;
+  border-color: $header--active--border-color;
+  color: $header--active--color;
+  padding: 0;
+}
