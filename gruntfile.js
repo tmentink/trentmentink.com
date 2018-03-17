@@ -29,7 +29,9 @@ module.exports = function(grunt) {
     },
     concat: {
       main: {
-        src: [],
+        src: ["src/js/util/polyfills.js",
+              "src/js/util/**/*.js",
+             ],
         dest: "src/js/main.js"
       }
     },
@@ -68,6 +70,6 @@ module.exports = function(grunt) {
   require("load-grunt-tasks")(grunt)
   require("time-grunt")(grunt)
 
-  grunt.registerTask("default", ["concat", "babel", "stamp", "uglify", "sass", "clean"])
+  grunt.registerTask("default", ["eslint", "concat", "babel", "stamp", "uglify", "sass", "clean"])
   grunt.registerTask("lint", ["eslint"])
 }
