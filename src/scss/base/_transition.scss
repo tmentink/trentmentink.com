@@ -1,5 +1,5 @@
 
-@mixin transition($property: "all", $time: 0.2s, $easing: "ease-in", $delay: 0) {
+@mixin transition($property: "all", $time: 0.2s, $easing: "ease-out", $delay: 0) {
   -webkit-transition-property: #{$property};
           transition-property: #{$property};
   -webkit-transition-duration: #{$time};

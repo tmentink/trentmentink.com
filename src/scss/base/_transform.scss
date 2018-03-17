@@ -6,6 +6,12 @@
   @include transform(translate(-50%,-50%));
 }
 
+@mixin absolute-hcenter {
+  position: absolute;
+  left: 50%;
+  @include transform(translateX(-50%));
+}
+
 @mixin absolute-vcenter {
   position: absolute;
   top: 50%;
