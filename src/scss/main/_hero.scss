@@ -3,15 +3,15 @@
 // Variables
 // ------------------------------------------------------------------------
 
-$hero--background           : #252A30;
-$hero--color                : rgba(#fff, .9);
+$hero--background           : $color--black;
+$hero--color                : rgba($color--white, .9);
 
-$hero__button--border-color : #FED766;
+$hero__button--border-color : $color--accent;
 $hero__button--duration     : .3s;
 $hero__button--easing       : ease-in-out;
 $hero__button--font-size    : rem(12px);
 
-$hero__down-arrow--color    : rgba(#fff, .5);
+$hero__down-arrow--color    : rgba($color--white, .5);
 
 $hero__header--font-size    : rem(22px);
 
