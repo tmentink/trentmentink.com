@@ -1,7 +1,21 @@
 
+// ------------------------------------------------------------------------
+// Variables
+// ------------------------------------------------------------------------
+
+$font-family--base : "Montserrat", sans-serif;
 $font-size--base   : 16px;
 $line-height--base : 22px;
 
+html {
+  font-size: $font-size--base;
+  font-family: $font-family--base;
+}
+
+
+// ------------------------------------------------------------------------
+// Functions
+// ------------------------------------------------------------------------
 
 @function em($target: $font-size--base, $context: $font-size--base) {
   @return ($target / $context) * 1em;
