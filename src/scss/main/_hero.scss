@@ -1,0 +1,158 @@
+
+// ------------------------------------------------------------------------
+// Variables
+// ------------------------------------------------------------------------
+
+$hero--background           : #252A30;
+$hero--color                : rgba(#fff, .9);
+
+$hero__button--border-color : #FED766;
+$hero__button--duration     : .3s;
+$hero__button--easing       : ease-in-out;
+$hero__button--font-size    : rem(12px);
+
+$hero__down-arrow--color    : rgba(#fff, .5);
+
+$hero__header--font-size    : rem(22px);
+
+$hero__image--duration      : 3s;
+$hero__image--easing        : cubic-bezier(0.680, -0.550, 0.265, 1.4);
+
+
+// ------------------------------------------------------------------------
+// Structure
+// ------------------------------------------------------------------------
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+}
+
+.hero__image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.hero__container {
+  padding: 0 1rem;
+  width: 100vw;
+  @include absolute-center;
+}
+
+.hero__header {
+  margin: 0;
+}
+
+.hero__button {
+  border: rem(2px) solid;
+  border-radius: rem(50px);
+  margin-top: 2rem;
+  padding: .75rem 1.75rem;  
+  display: inline-block;
+  cursor: pointer;
+
+  @include bp-min-md {
+    margin-top: 3.5rem;
+    padding: 1rem 3rem;  
+  }
+}
+
+.hero__down-arrow {
+  padding: rem(20px);
+  bottom: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  @include absolute-hcenter;
+
+  div {
+    margin-bottom: .5rem;
+  }
+}
+
+
+// ------------------------------------------------------------------------
+// Font & Color
+// ------------------------------------------------------------------------
+
+.hero {
+  background: $hero--background;
+  color: $hero--color;
+}
+
+.hero__header {
+  font-size: $hero__header--font-size;
+  font-weight: bold;
+  line-height: 1.25;
+
+  @include bp-min-md {
+    font-size: $hero__header--font-size * 1.5
+  }
+
+  @include bp-min-lg {
+    font-size: $hero__header--font-size * 2.5
+  }
+}
+
+.hero__button {
+  color: $hero--color;
+  border-color: $hero__button--border-color;
+  font-size: $hero__button--font-size;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  @include bp-min-md {
+    font-size: $hero__button--font-size * 1.25
+  }
+}
+
+.hero__down-arrow {
+  color: $hero__down-arrow--color;
+}
+
+
+// ------------------------------------------------------------------------
+// Effects
+// ------------------------------------------------------------------------
+
+.hero__image {
+  opacity: 0;
+
+  @include transition("opacity", $hero__image--duration, $hero__image--easing);
+}
+
+.hero__image--active {
+  opacity: .3;
+}
+
+.hero__button {
+  @include transition("all", $hero__button--duration, $hero__button--easing);
+
+  &:hover {
+    background: $hero__button--border-color;
+    padding: .75rem 2.25rem; 
+    color: $hero--background;
+  }
+
+  @include bp-min-md {
+    &:hover {
+      padding: 1rem 3.5rem;  
+    }
+  }
+}
+
+.hero__down-arrow {
+  @include transition("color");
+
+  &:hover {
+    color: $hero--color;
+  }
+}

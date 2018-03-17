@@ -31,6 +31,7 @@ module.exports = function(grunt) {
       main: {
         src: ["src/js/util/polyfills.js",
               "src/js/util/**/*.js",
+              "src/js/main/**/*.js",
              ],
         dest: "src/js/main.js"
       }
