@@ -94,5 +94,6 @@ $sidemenu__item--easing       : "ease-in-out";
 }
 
 .sidemenu__pusher--pushed {
+  cursor: pointer;
   right: $sidemenu--max-width;
 }
