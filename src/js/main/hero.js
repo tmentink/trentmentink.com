@@ -15,7 +15,8 @@ var Hero = ((Hero) => {
     HERO                  : "#hero",
     HERO_HEADER           : ".hero__header",
     HERO_IMAGE            : ".hero__image",
-    HERO_IMAGE_NOT_ACTIVE : `.hero__image:not(.${ClassName.HERO_IMAGE_ACTIVE})`
+    HERO_IMAGE_NOT_ACTIVE : `.hero__image:not(.${ClassName.HERO_IMAGE_ACTIVE})`,
+    HERO_TYPER            : ".hero__typer"
   }
 
   const Images = {
@@ -37,6 +38,17 @@ var Hero = ((Hero) => {
   const Slideshow = {
     FadeDuration : 3000,
     Interval     : 10000
+  }
+
+  const Typer = {
+    Duration: 6000,
+    Speed: 75,
+    Words: [
+      "web applications.",
+      "user interfaces.",
+      "business websites.",
+      "[ your next project ]"
+    ]
   }
 
 
@@ -77,6 +89,18 @@ var Hero = ((Hero) => {
     }, Slideshow.Interval)
   }
 
+  Hero.startTyper = function() {
+    new TypeIt(Selector.HERO_TYPER, {
+      strings: Typer.Words,
+      breakLines: false,
+      lifeLike: false,
+      loop: true,
+      loopDelay: Typer.Duration,
+      nextStringDelay: Typer.Duration,
+      speed: Typer.Speed
+    })
+  }
+
 
   // ----------------------------------------------------------------------
   // Init
@@ -93,6 +117,7 @@ var Hero = ((Hero) => {
       .addClass(ClassName.HERO_IMAGE_ACTIVE)
 
     Hero.startSlideshow()
+    Hero.startTyper()
   }
 
 
