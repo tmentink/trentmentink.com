@@ -234,9 +234,9 @@ var Hero = function (Hero) {
   };
 
   var Typer = {
-    Duration: 6000,
+    Duration: 6500,
     Speed: 75,
-    Words: ["web applications.", "user interfaces.", "business websites.", "[ your next project ]"]
+    Words: ["user interfaces.", "business websites.", "[ your next project ]", "web applications."]
 
     // ----------------------------------------------------------------------
     // Public Methods
@@ -281,7 +281,8 @@ var Hero = function (Hero) {
       loop: true,
       loopDelay: Typer.Duration,
       nextStringDelay: Typer.Duration,
-      speed: Typer.Speed
+      speed: Typer.Speed,
+      startDelete: true
     });
   };
 

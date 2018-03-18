@@ -41,13 +41,13 @@ var Hero = ((Hero) => {
   }
 
   const Typer = {
-    Duration: 6000,
+    Duration: 6500,
     Speed: 75,
     Words: [
-      "web applications.",
       "user interfaces.",
       "business websites.",
-      "[ your next project ]"
+      "[ your next project ]",
+      "web applications."
     ]
   }
 
@@ -97,7 +97,8 @@ var Hero = ((Hero) => {
       loop: true,
       loopDelay: Typer.Duration,
       nextStringDelay: Typer.Duration,
-      speed: Typer.Speed
+      speed: Typer.Speed,
+      startDelete: true
     })
   }
 
