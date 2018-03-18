@@ -37,7 +37,7 @@ module.exports = function(grunt) {
       }
     },
     eslint: {
-      target: ["src/js/**/*.js"]
+      target: ["src/js/**/*.js", "!<%= concat.main.dest %>"]
     },
     sass: {
       main: {
@@ -81,6 +81,6 @@ module.exports = function(grunt) {
   require("load-grunt-tasks")(grunt)
   require("time-grunt")(grunt)
 
-  grunt.registerTask("default", ["clean", "eslint", "concat", "babel", "stamp", "uglify", "sass"])
+  grunt.registerTask("default", ["eslint", "concat", "babel", "stamp", "uglify", "sass", "clean"])
   grunt.registerTask("lint", ["eslint"])
 }
