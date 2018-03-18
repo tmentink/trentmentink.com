@@ -11,16 +11,8 @@ var Hero = ((Hero) => {
     HERO_IMAGE_ACTIVE : "hero__image--active"
   }
 
-  const Selector = {
-    HERO                  : "#hero",
-    HERO_HEADER           : ".hero__header",
-    HERO_IMAGE            : ".hero__image",
-    HERO_IMAGE_NOT_ACTIVE : `.hero__image:not(.${ClassName.HERO_IMAGE_ACTIVE})`,
-    HERO_TYPER            : ".hero__typer"
-  }
-
   const Images = {
-    CurrentIndex: 10,
+    Index: 0,
     Paths: [
       "img/hero/0.jpg",
       "img/hero/1.jpg",
@@ -35,18 +27,27 @@ var Hero = ((Hero) => {
     ]
   }
 
+  const Selector = {
+    HERO                  : "#hero",
+    HERO_HEADER           : ".hero__header",
+    HERO_IMAGE            : ".hero__image",
+    HERO_IMAGE_NOT_ACTIVE : `.hero__image:not(.${ClassName.HERO_IMAGE_ACTIVE})`,
+    TYPER                 : "#typer"
+  }
+
   const Slideshow = {
     FadeDuration : 3000,
     Interval     : 10000
   }
 
   const Typer = {
-    Duration: 6500,
+    Delay: 5000,
+    Pause: 300,
     Speed: 75,
     Words: [
       "user interfaces.",
       "business websites.",
-      "[ your next project ]",
+      "your next project.",
       "web applications."
     ]
   }
@@ -61,11 +62,11 @@ var Hero = ((Hero) => {
   }
 
   Hero.getNextImagePath = function() {
-    Images.CurrentIndex += 1
-    if (Images.CurrentIndex >= Images.Paths.length) {
-      Images.CurrentIndex = 0
-    }
-    return Images.Paths[Images.CurrentIndex]
+    Images.Index >= Images.Paths.length - 1
+      ? Images.Index = 0
+      : Images.Index += 1
+
+    return Images.Paths[Images.Index]
   }
 
   Hero.setImagePath = function($img, path) {
@@ -73,7 +74,7 @@ var Hero = ((Hero) => {
   }
 
   Hero.setRandomImageIndex = function() {
-    Images.CurrentIndex = Math.floor(Math.random() * (Images.Paths.length +1))
+    Images.Index = Math.floor(Math.random() * (Images.Paths.length +1))
   }
 
   Hero.startSlideshow = function() {
@@ -90,13 +91,13 @@ var Hero = ((Hero) => {
   }
 
   Hero.startTyper = function() {
-    new TypeIt(Selector.HERO_TYPER, {
+    new TypeIt(Selector.TYPER, {
       strings: Typer.Words,
       breakLines: false,
       lifeLike: false,
       loop: true,
-      loopDelay: Typer.Duration,
-      nextStringDelay: Typer.Duration,
+      loopDelay: Typer.Delay,
+      nextStringDelay: [Typer.Pause, Typer.Delay],
       speed: Typer.Speed,
       startDelete: true
     })
