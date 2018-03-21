@@ -116,9 +116,6 @@ var Hero = ((Hero) => {
 
     $cache(Selector.HERO).find(Selector.HERO_IMAGE).first()
       .addClass(ClassName.HERO_IMAGE_ACTIVE)
-
-    Hero.startSlideshow()
-    Hero.startTyper()
   }
 
 

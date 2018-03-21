@@ -1,0 +1,156 @@
+
+// ------------------------------------------------------------------------
+// Variables
+// ------------------------------------------------------------------------
+
+$box--border-radius  : rem(5px);
+$box--height         : rem(60px);
+$box--base-rotate    : 22.5deg;
+$box--base-translate : rem(9px);
+
+$container--duration : 2.5s;
+$container--easing   : "ease-in";
+$container--left     : calc(50% - 20px);
+$container--top      : $container--left;
+
+$fade--duration      : 1.5s;
+
+$shadow--height      : $box--height * .1;
+$shadow--width       : $box--height;
+$shadow--top         : $box--height + ($shadow--height * 2);
+
+
+// ------------------------------------------------------------------------
+// Structure
+// ------------------------------------------------------------------------
+
+.preloader { 
+  position: fixed;
+  top: 0;
+  right: 0; 
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+}
+
+.preloader__text {
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  @include transform(translate(-40%, -($box--height * 1.5)))
+}
+
+.preloader__container {
+  position: absolute;
+  top: $container--top;
+  left: $container--left;
+}
+
+.preloader__box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $box--height;
+  height: $box--height;
+  border-radius: $box--border-radius;
+}
+
+.preloader__shadow {
+  position: absolute;
+  top: $shadow--top;
+  left: 0;
+  width: $shadow--width;
+  height: $shadow--height;
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+
+// ------------------------------------------------------------------------
+// Font & Color
+// ------------------------------------------------------------------------
+
+.preloader {
+  background: $color--black;
+}
+
+.preloader__box {
+  background: $color--accent;
+}
+
+.preloader__shadow {
+  background: #000;
+}
+
+.preloader__text {
+  color: rgba($color--white, .65);
+  font-size: rem(32px);
+  font-weight: bold;
+}
+
+
+// ------------------------------------------------------------------------
+// Effects
+// ------------------------------------------------------------------------
+
+.preloader--active {
+  .preloader__box {
+    @include animation(box, .5s)
+  }
+
+  .preloader__shadow {
+    @include animation(shadow, .5s)
+  }
+}
+
+.preloader--fade,
+.preloader__text--fade {
+  opacity: 0;
+  @include transition("opacity", $fade--duration);
+}
+
+.preloader--hide {
+  display: none;
+}
+
+.preloader__container--run {
+  @include animation(container, $container--duration, $container--easing, "normal");
+}
+
+
+//
+// Animations
+//
+@keyframes box {
+  17% {
+    border-bottom-right-radius: $box--border-radius;
+  }
+  25% { 
+    @include transform(translateY($box--base-translate) rotate($box--base-rotate));
+  }
+  50% {
+    @include transform(translateY($box--base-translate * 2) scale(1, .9) rotate($box--base-rotate * 2));
+    border-bottom-right-radius: $box--border-radius * 8;
+  }
+  75% {
+    @include transform(translateY($box--base-translate) rotate($box--base-rotate * 3));
+  }
+  100% {
+    @include transform(translateY(0) rotate($box--base-rotate * 4));
+  }
+}
+
+@keyframes container {
+  0% {
+    left: $container--left;
+  }
+  100% {
+    left: 110%;
+  }
+}
+
+@keyframes shadow {
+  50% {
+    @include transform(scale(1.2, 1));
+  }
+}
