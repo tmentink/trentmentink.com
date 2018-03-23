@@ -8,8 +8,6 @@ $box--height         : rem(60px);
 $box--base-rotate    : 22.5deg;
 $box--base-translate : rem(9px);
 
-$container--duration : 2.5s;
-$container--easing   : "ease-in";
 $container--left     : calc(50% - 20px);
 $container--top      : $container--left;
 
@@ -113,10 +111,6 @@ $shadow--top         : $box--height + ($shadow--height * 2);
   display: none;
 }
 
-.preloader__container--run {
-  @include animation(container, $container--duration, $container--easing, "normal");
-}
-
 
 //
 // Animations
@@ -137,15 +131,6 @@ $shadow--top         : $box--height + ($shadow--height * 2);
   }
   100% {
     @include transform(translateY(0) rotate($box--base-rotate * 4));
-  }
-}
-
-@keyframes container {
-  0% {
-    left: $container--left;
-  }
-  100% {
-    left: 110%;
   }
 }
 
