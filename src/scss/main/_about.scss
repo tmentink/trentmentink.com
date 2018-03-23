@@ -35,7 +35,7 @@
   position: relative;
   height: $box--height;
   width: $box--height;
-  border-radius: $box--border-radius ;
+  border-radius: $box--border-radius;
 }
 
 .block__header {
@@ -63,7 +63,8 @@
   display: flex;
   align-items: center;
   margin: rem(10px);
-  padding: 0 .75rem;  
+  padding: 0 .75rem;
+  border-radius: $box--border-radius; 
   height: rem(35px);
   width: 100%;
   position: relative;
@@ -81,12 +82,12 @@
 }
 
 .bar__fill {
-  background: $color--accent;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 100%;
+  border-radius: $box--border-radius; 
 }
 
 
@@ -130,12 +131,16 @@
   background: $color--grey;
 }
 
-.bar__title,
-.bar__percent {
-  color: $color--black;
-}
-
 .bar__fill {
   background: $color--accent;
 }
 
+.bar__title,
+.bar__percent {
+  color: $color--black;
+  font-size: rem(14px);
+}
+
+.bar__title {
+  font-weight: bold;
+}
