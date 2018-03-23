@@ -3,29 +3,90 @@
 // Structure
 // ------------------------------------------------------------------------
 
-.blocks {
+.bars,
+.blocks,
+.about__container{
   display: flex;
   flex-wrap: wrap;
-  margin-top: rem(35px);
+  width: 100%;
 }
 
-.block {
-  padding: rem(25px);
-  width: 100%;
-  text-align: center;
-
+.bars,
+.blocks {
+  margin-top: rem(35px);
+  padding: 0 rem(15px);
+  
   @include bp-min-lg {
-    flex: 1 1 33%;
+    width: 50%;
   }
 }
 
+//
+// Blocks
+//
+
+.block__wrapper {
+  padding: rem(15px) 0;
+  flex: 1 1 50%;
+}
+
+.block {
+  margin: 0 auto;
+  position: relative;
+  height: $box--height;
+  width: $box--height;
+  border-radius: $box--border-radius ;
+}
+
 .block__header {
-  margin: 1.25rem 0;
+  margin: .5rem 0;
 }
 
 .block__text {
   margin: 0 auto;
-  max-width: rem(350px);
+  padding: 0 rem(7.5px);
+  max-width: rem(215px);
+}
+
+
+//
+// Bars
+//
+
+.bars {
+  @include bp-min-md {
+    padding: 0 rem(40px);
+  }
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  margin: rem(10px);
+  padding: 0 .75rem;  
+  height: rem(35px);
+  width: 100%;
+  position: relative;
+}
+
+.bar__title,
+.bar__percent {
+  position: relative;
+  z-index: 10;
+  color: $color--black;
+}
+
+.bar__percent {
+  margin-left: auto;
+}
+
+.bar__fill {
+  background: $color--accent;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 100%;
 }
 
 
@@ -33,22 +94,48 @@
 // Font & Color
 // ------------------------------------------------------------------------
 
+//
+// Blocks
+//
+
+.block {
+  background: $color--accent;
+}
+
 .block__icon {
-  color: $color--accent;
-  font-size: rem(50px) !important;
+  color: $color--black;
+  font-size: rem(30px) !important;
+  @include absolute-center;
 }
 
 .block__header {
-  font-size: rem(24px);
+  font-size: rem(18px);
   font-weight: bold;
 
   @include bp-min-md {
-    font-size: rem(30px);
+    font-size: rem(24px);
   }
 }
 
 .block__text {
   color: rgba($color--black, .65);
   font-size: rem(14px);
-  line-height: 1.8;
 }
+
+//
+// Bars
+//
+
+.bar {
+  background: $color--grey;
+}
+
+.bar__title,
+.bar__percent {
+  color: $color--black;
+}
+
+.bar__fill {
+  background: $color--accent;
+}
+
