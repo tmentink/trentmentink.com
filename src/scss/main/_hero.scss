@@ -6,11 +6,6 @@
 $hero--background           : $color--black;
 $hero--color                : rgba($color--white, .9);
 
-$hero__button--border-color : $color--accent;
-$hero__button--duration     : .3s;
-$hero__button--easing       : ease-in-out;
-$hero__button--font-size    : rem(12px);
-
 $hero__down-arrow--color    : rgba($color--white, .5);
 
 $hero__header--font-size    : rem(22px);
@@ -52,20 +47,6 @@ $hero__image--easing        : cubic-bezier(0.680, -0.550, 0.265, 1.4);
   margin: 0;
 }
 
-.hero__button {
-  border: rem(2px) solid;
-  border-radius: rem(50px);
-  margin-top: 2rem;
-  padding: .75rem 1.75rem;  
-  display: inline-block;
-  cursor: pointer;
-
-  @include bp-min-md {
-    margin-top: 3.5rem;
-    padding: 1rem 3rem;  
-  }
-}
-
 .hero__down-arrow {
   padding: rem(20px);
   bottom: 0;
@@ -102,18 +83,6 @@ $hero__image--easing        : cubic-bezier(0.680, -0.550, 0.265, 1.4);
   }
 }
 
-.hero__button {
-  color: $hero--color;
-  border-color: $hero__button--border-color;
-  font-size: $hero__button--font-size;
-  font-weight: bold;
-  text-transform: uppercase;
-
-  @include bp-min-md {
-    font-size: $hero__button--font-size * 1.25
-  }
-}
-
 .hero__down-arrow {
   color: $hero__down-arrow--color;
 }
@@ -131,22 +100,6 @@ $hero__image--easing        : cubic-bezier(0.680, -0.550, 0.265, 1.4);
 
 .hero__image--active {
   opacity: .3;
-}
-
-.hero__button {
-  @include transition("all", $hero__button--duration, $hero__button--easing);
-
-  &:hover {
-    background: $hero__button--border-color;
-    padding: .75rem 2.25rem; 
-    color: $hero--background;
-  }
-
-  @include bp-min-md {
-    &:hover {
-      padding: 1rem 3.5rem;  
-    }
-  }
 }
 
 .hero__down-arrow {

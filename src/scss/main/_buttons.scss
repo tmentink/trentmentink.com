@@ -1,0 +1,94 @@
+
+// ------------------------------------------------------------------------
+// Variables
+// ------------------------------------------------------------------------
+
+$button--duration             : .3s;
+$button--easing               : ease-in-out;
+$button--font-size            : rem(12px);
+
+$button--accent--border-color : $color--accent;
+$button--accent--color        : $color--white;
+$button--accent--color--hover : $color--black;
+
+$button--black--border-color  : $color--black;
+$button--black--color         : $color--black;
+$button--black--color--hover  : $color--accent;
+
+
+// ------------------------------------------------------------------------
+// Structure
+// ------------------------------------------------------------------------
+
+.button {
+  border: rem(2px) solid;
+  border-radius: rem(50px);
+  padding: .75rem 1.75rem;  
+  margin-top: 2rem;
+  display: inline-block;
+  cursor: pointer;
+
+  @include bp-min-md {
+    margin-top: 3rem;
+    padding: 1rem 3rem;  
+  }
+}
+
+
+// ------------------------------------------------------------------------
+// Font & Color
+// ------------------------------------------------------------------------
+
+.button {
+  font-size: $button--font-size;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  @include bp-min-md {
+    font-size: $button--font-size * 1.25
+  }
+}
+
+.button--accent {
+  color: $button--accent--color;
+  border-color: $button--accent--border-color;
+}
+
+.button--black {
+  color: $button--black--color;
+  border-color: $button--black--border-color;
+}
+
+
+// ------------------------------------------------------------------------
+// Effects
+// ------------------------------------------------------------------------
+
+.button {
+  @include transition("all", $button--duration, $button--easing);
+
+  &:hover {
+    padding: .75rem 2.25rem;
+  }
+
+  @include bp-min-md {
+    &:hover {
+      padding: 1rem 3.5rem;  
+    }
+  }
+}
+
+.button--accent {
+  &:hover {
+    background: $button--accent--border-color;
+    color: $button--accent--color--hover;
+  }
+}
+
+.button--black {
+  &:hover {
+    background: $button--black--border-color;
+    color: $button--black--color--hover;
+  }
+}
