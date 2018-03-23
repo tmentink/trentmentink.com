@@ -3,9 +3,52 @@
 // Structure
 // ------------------------------------------------------------------------
 
-#about {
-  height: 100vh;
+.blocks {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: rem(35px);
+}
+
+.block {
+  padding: rem(25px);
   width: 100%;
-  padding: 3rem 1rem;
   text-align: center;
+
+  @include bp-min-lg {
+    flex: 1 1 33%;
+  }
+}
+
+.block__header {
+  margin: 1.25rem 0;
+}
+
+.block__text {
+  margin: 0 auto;
+  max-width: rem(350px);
+}
+
+
+// ------------------------------------------------------------------------
+// Font & Color
+// ------------------------------------------------------------------------
+
+.block__icon {
+  color: $color--accent;
+  font-size: rem(50px) !important;
+}
+
+.block__header {
+  font-size: rem(24px);
+  font-weight: bold;
+
+  @include bp-min-md {
+    font-size: rem(30px);
+  }
+}
+
+.block__text {
+  color: rgba($color--black, .65);
+  font-size: rem(14px);
+  line-height: 1.8;
 }
