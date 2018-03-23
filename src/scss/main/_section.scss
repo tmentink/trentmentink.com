@@ -7,3 +7,20 @@ section {
   padding: rem(25px) 0 rem(50px);
   text-align: center;
 }
+
+.section__header {
+  margin: 0 0 .67em 0;
+}
+
+
+// ------------------------------------------------------------------------
+// Font & Color
+// ------------------------------------------------------------------------
+
+.section__header {
+  font-size: rem(24px);
+
+  @include bp-min-md {
+    font-size: rem(32px);
+  }
+}
