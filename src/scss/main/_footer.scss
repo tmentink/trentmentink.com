@@ -1,0 +1,60 @@
+
+// ------------------------------------------------------------------------
+// Structure
+// ------------------------------------------------------------------------
+
+$footer--padding    : rem(50px) 0;
+
+$footer__icon--size : rem(36px);
+
+
+// ------------------------------------------------------------------------
+// Structure
+// ------------------------------------------------------------------------
+
+footer {
+  padding: $footer--padding;
+  text-align: center;
+}
+
+.footer__icons {
+  margin-bottom: rem(25px);
+}
+
+.footer__icon {
+  margin: 0 rem(5px);
+  height: $footer__icon--size;
+  width: $footer__icon--size;
+  display: inline-block;
+  border-radius: rem(50px);
+}
+
+
+// ------------------------------------------------------------------------
+// Font & Color
+// ------------------------------------------------------------------------
+
+footer {
+  background: $color--black;
+}
+
+.footer__copyright {
+  color: rgba($color--white, .5);
+  font-size: rem(14px);
+}
+
+.footer__icon {
+  @include transition("color, background", .3s, "ease-in-out");
+
+  background: rgba(black, .15);
+  color: rgba($color--white, .75);
+  
+  font-size: 1rem;
+  text-decoration: none;
+  line-height: 2.3;
+
+  &:hover {
+    background: rgba(black, .75);
+    color: rgba($color--white, 1);
+  }
+}
