@@ -9,7 +9,7 @@
 
   var SelectorCache = {}
 
-  window.$cache = function (selector, context, reset) {
+  window.$cache = function(selector, context, reset) {
     if (typeof context === "boolean") {
       reset   = context
       context = false
@@ -29,10 +29,28 @@
 
 
   // ----------------------------------------------------------------------
+  // In View
+  // ----------------------------------------------------------------------
+
+  $.fn.inView = function(offset) {
+    if (!this.length) return false
+    const rect = this.get(0).getBoundingClientRect()
+    offset     = offset || 0
+
+    return (
+      rect.bottom >= 0 &&
+      rect.right >= 0 &&
+      rect.top + offset <= document.documentElement.clientHeight &&
+      rect.left<= document.documentElement.clientWidth
+    )
+  }
+
+
+  // ----------------------------------------------------------------------
   // Easings
   // ----------------------------------------------------------------------
 
-  $.easing.easeInOutExpo = function (x) {
+  $.easing.easeInOutExpo = function(x) {
     return x === 0 ? 0 : x === 1 ? 1 : x < 0.5
       ? Math.pow(2, 20 * x - 10) / 2
       : (2 - Math.pow(2, -20 * x + 10)) / 2
