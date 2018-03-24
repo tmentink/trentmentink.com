@@ -6,6 +6,8 @@
 $button--duration             : .3s;
 $button--easing               : ease-in-out;
 $button--font-size            : rem(12px);
+$button--padding-y            : .75rem;
+$button--padding-x            : 2rem;
 
 $button--accent--border-color : $color--yellow;
 $button--accent--color        : $color--white;
@@ -23,14 +25,13 @@ $button--black--color--hover  : $color--yellow;
 .button {
   border: rem(2px) solid;
   border-radius: rem(50px);
-  padding: .75rem 1.75rem;  
+  padding: $button--padding-y $button--padding-x;
   margin-top: 2rem;
   display: inline-block;
   cursor: pointer;
 
   @include bp-min-md {
     margin-top: 3rem;
-    padding: 1rem 3rem;  
   }
 }
 
@@ -69,13 +70,8 @@ $button--black--color--hover  : $color--yellow;
   @include transition("all", $button--duration, $button--easing);
 
   &:hover {
-    padding: .75rem 2.25rem;
-  }
-
-  @include bp-min-md {
-    &:hover {
-      padding: 1rem 3.5rem;  
-    }
+    padding-left: $button--padding-x * 1.25;
+    padding-right: $button--padding-x * 1.25;
   }
 }
 
