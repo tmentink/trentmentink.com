@@ -23,6 +23,7 @@ $header__item--unfocused--color : rgba($header--color, .5);
 //
 $header--active--background             : rgba($header--color, .95);
 $header--active--border-color           : rgba($color--black, .25);
+$header--active--box-shadow             : 0 rem(1px) rem(5px) rgba(black, .25);
 $header--active--color                  : $color--black;
 
 $header__item--active--hover--color     : $header--active--color;
@@ -133,6 +134,8 @@ $header__item--active--unfocused--color : rgba($header--active--color, .5);
 // Active Colors
 //
 .header--active {
+  box-shadow: $header--active--box-shadow;
+
   .header__brand,
   .header__item {
     color: $header--active--color;
