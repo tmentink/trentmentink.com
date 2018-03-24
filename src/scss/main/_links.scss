@@ -1,0 +1,30 @@
+
+// ------------------------------------------------------------------------
+// Font & Color
+// ------------------------------------------------------------------------
+
+.link {
+  color: $color--blue;
+  text-decoration: none;
+
+  &:hover {
+    color: darken($color--blue, 15%);
+  }
+}
+
+.link--dotted {
+  border-bottom: rem(1px) dotted $color--blue;
+
+  &:hover {
+    border-color: darken($color--blue, 15%);
+  }
+}
+
+
+// ------------------------------------------------------------------------
+// Effects
+// ------------------------------------------------------------------------
+
+.link {
+  @include transition("color, border-color");
+}

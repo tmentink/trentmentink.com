@@ -4,11 +4,12 @@
 //
 @import "../base/reset";
 @import "../base/breakpoints";
-@import "../base/color";
-@import "../base/font";
 @import "../base/transform";
 @import "../base/transition";
 @import "../base/animations";
+
+@import "../base/color";
+@import "../base/font";
 
 //
 // Main
@@ -17,6 +18,8 @@
 @import "section";
 @import "container";
 @import "buttons";
+@import "links";
+
 @import "header";
 @import "sidemenu";
 @import "hero";
