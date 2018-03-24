@@ -17,6 +17,9 @@ var Contact = ((Contact) => {
   // ----------------------------------------------------------------------
 
   Contact.addContainerAnimation = function() {
+    $.Velocity.hook($cache(Selector.CONTAINER), "translateY", "50px")
+    $.Velocity.hook($cache(Selector.CONTAINER), "opacity", "0")
+
     Animation.add({
       selector : Selector.CONTAINER,
       offset   : 50,
@@ -25,10 +28,6 @@ var Contact = ((Contact) => {
           translateY : "0px",
           opacity    : 1
         })
-      },
-      hook() {
-        $.Velocity.hook($cache(Selector.CONTAINER), "translateY", "50px")
-        $.Velocity.hook($cache(Selector.CONTAINER), "opacity", "0")
       }
     })
   }

@@ -43,6 +43,9 @@ var About = ((About) => {
   }
 
   About.addBlocksAnimation = function() {
+    $.Velocity.hook($cache(Selector.BLOCKS), "translateY", "50px")
+    $.Velocity.hook($cache(Selector.BLOCKS), "opacity", "0")
+
     Animation.add({
       selector : Selector.BLOCKS,
       offset   : 25,
@@ -51,15 +54,14 @@ var About = ((About) => {
           translateY : "0px",
           opacity    : 1
         })
-      },
-      hook() {
-        $.Velocity.hook($cache(Selector.BLOCKS), "translateY", "50px")
-        $.Velocity.hook($cache(Selector.BLOCKS), "opacity", "0")
       }
     })
   }
 
   About.addTextAnimation = function() {
+    $.Velocity.hook($cache(Selector.TEXT), "translateY", "50px")
+    $.Velocity.hook($cache(Selector.TEXT), "opacity", "0")
+
     Animation.add({
       selector : Selector.TEXT,
       animation() {
@@ -67,10 +69,6 @@ var About = ((About) => {
           translateY : "0px",
           opacity    : 1
         })
-      },
-      hook() {
-        $.Velocity.hook($cache(Selector.TEXT), "translateY", "50px")
-        $.Velocity.hook($cache(Selector.TEXT), "opacity", "0")
       }
     })
   }

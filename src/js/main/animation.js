@@ -19,23 +19,16 @@ var Animation = ((Animation) => {
   // ----------------------------------------------------------------------
 
   Animation.add = function({selector, offset, animation}) {
-    const args     = arguments[0]
-    args.triggered = false
-    Animations.push(args)
-
-    if ($.type(args.hook) === "function") {
-      args.hook()
-    }
+    Animations.push(arguments[0])
   }
 
   Animation.watch = function() {
-    for (var i = 0, i_end = Animations.length; i < i_end; i++) {
+    let i = Animations.length
+    while (i--) {
       const anim = Animations[i]
-      if (anim.triggered) continue
-
       if ($cache(anim.selector).inView(anim.offset)) {
         anim.animation()
-        anim.triggered = true
+        Animations.splice(i, 1)
       }
     }
   }
