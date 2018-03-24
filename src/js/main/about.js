@@ -43,7 +43,15 @@ var About = ((About) => {
   }
 
   About.addBlocksAnimation = function() {
-    $.Velocity.hook($cache(Selector.BLOCKS), "translateY", "50px")
+    let direction = "translateY"
+    let distance  = "50px"
+
+    if (BP.min_lg.matches) {
+      direction = "translateX"
+      distance  = "-50px"
+    }
+
+    $.Velocity.hook($cache(Selector.BLOCKS), direction, distance)
     $.Velocity.hook($cache(Selector.BLOCKS), "opacity", "0")
 
     Animation.add({
@@ -52,6 +60,7 @@ var About = ((About) => {
       animation() {
         $cache(Selector.BLOCKS).velocity({
           translateY : "0px",
+          translateX : "0px",
           opacity    : 1
         })
       }
