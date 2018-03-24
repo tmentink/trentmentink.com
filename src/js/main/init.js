@@ -8,13 +8,14 @@
   // ----------------------------------------------------------------------
 
   $(document).ready(function() {
-    About.init()
-    Animation.init()
-    Contact.init()
     Preloader.init()
     Header.init()
     Hero.init()
     SideMenu.init()
+    About.init()
+    Projects.init()
+    Contact.init()
+    Animation.init()
   })
 
 
