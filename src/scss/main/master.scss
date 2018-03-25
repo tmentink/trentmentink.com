@@ -27,3 +27,12 @@
 @import "projects";
 @import "contact";
 @import "footer";
+
+
+//
+// Velocity.js
+//
+.velocity-animating {
+  -webkit-transition: none !important;
+          transition: none !important;
+}
