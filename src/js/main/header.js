@@ -12,9 +12,7 @@ var Header = ((Header) => {
   }
 
   const Selector = {
-    HEADER      : "#header",
-    HERO        : "#hero",
-    HERO_HEADER : ".hero__header"
+    HEADER : "#header"
   }
 
 
@@ -27,8 +25,7 @@ var Header = ((Header) => {
   }
 
   Header.toggleActiveStyles = function() {
-    const heroOffset = Hero.getHeaderTop() - 100
-    const toggle     = $cache(document).scrollTop() >= heroOffset
+    const toggle = $cache(document).scrollTop() >= Hero.getHeaderTop() - 100
     $cache(Selector.HEADER).toggleClass(ClassName.ACTIVE, toggle)
   }
 

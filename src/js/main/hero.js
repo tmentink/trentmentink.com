@@ -29,7 +29,7 @@ var Hero = ((Hero) => {
 
   const Selector = {
     HERO                  : "#hero",
-    HERO_HEADER           : ".hero__header",
+    HERO_HEADER           : "#hero__header",
     HERO_IMAGE            : ".hero__image",
     HERO_IMAGE_NOT_ACTIVE : `.hero__image:not(.${ClassName.HERO_IMAGE_ACTIVE})`,
     TYPER                 : "#typer"
@@ -58,7 +58,7 @@ var Hero = ((Hero) => {
   // ----------------------------------------------------------------------
 
   Hero.getHeaderTop = function() {
-    return $cache(Selector.HERO).find(Selector.HERO_HEADER).offset().top
+    return $cache(Selector.HERO_HEADER).offset().top
   }
 
   Hero.getNextImagePath = function() {
