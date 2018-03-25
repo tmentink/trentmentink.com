@@ -94,10 +94,12 @@ $shadow--top         : $box--height + ($shadow--height * 2);
 .preloader--active {
   .preloader__box {
     @include animation(box, .5s)
+    @include hard-acc;
   }
 
   .preloader__shadow {
     @include animation(shadow, .5s)
+    @include hard-acc;
   }
 }
 
