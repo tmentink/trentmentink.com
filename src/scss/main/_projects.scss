@@ -98,23 +98,11 @@ $card--margin-x      : rem(12.5px);
 // Effects
 // ------------------------------------------------------------------------
 
-.cards {
-  visibility: hidden;
+.card {
+  @include transition("box-shadow", 0.3s, "ease-out", 0.1s);
+  @include raised-shadow;
 
-  .card {
-    visibility: visible;
-    @include raised-shadow;
-    @include transition("opacity, box-shadow", 0.3s, "ease-out", 0.1s);
-  }
-
-  @include bp-min-lg {
-    &:hover .card {
-      opacity: 0.65 !important;
-    }
-
-    &:hover .card:hover {
-      opacity: 1 !important;
-      @include lifted-shadow;
-    }
+  &:hover {
+    @include lifted-shadow;
   }
 }
