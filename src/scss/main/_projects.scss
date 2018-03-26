@@ -56,13 +56,6 @@ $card--margin-x      : rem(12.5px);
   cursor: pointer;
 }
 
-.card__icon {
-  position: absolute;
-  top: 50%;
-  right: 1rem;
-  @include transform(translateY(-50%));
-}
-
 
 // ------------------------------------------------------------------------
 // Font & Color
@@ -88,18 +81,13 @@ $card--margin-x      : rem(12.5px);
   font-size: rem(14px);
 }
 
-.card__icon {
-  color: rgba($color--black, .65);
-  font-size: rem(20px) !important;
-}
-
 
 // ------------------------------------------------------------------------
 // Effects
 // ------------------------------------------------------------------------
 
 .card {
-  @include transition("box-shadow", 0.3s, "ease-out", 0.1s);
+  @include transition("box-shadow", 0.25s, "ease-out");
   @include raised-shadow;
 
   &:hover {
