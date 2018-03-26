@@ -39,6 +39,7 @@ $header__item--active--unfocused--color : rgba($header--active--color, .5);
   border-bottom: rem(1px) solid;
   padding: 1rem 0rem;
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 1001;
 
