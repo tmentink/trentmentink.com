@@ -12,8 +12,8 @@ var Scroll = ((Scroll) => {
   }
 
   const Selector = {
-    BODY : "body",
-    HTML : "html"
+    BODY      : "body",
+    HTML_BODY : "html, body"
   }
 
   const DURATION = 1500
@@ -26,7 +26,7 @@ var Scroll = ((Scroll) => {
   // ----------------------------------------------------------------------
 
   Scroll.disable = function() {
-    SCROLL_TOP = $cache(Selector.HTML).scrollTop()
+    SCROLL_TOP = $cache(Selector.HTML_BODY).scrollTop()
 
     $cache(Selector.BODY).css({
       position : "fixed",
@@ -44,7 +44,7 @@ var Scroll = ((Scroll) => {
       top      : ""
     })
 
-    $cache(Selector.HTML).scrollTop(SCROLL_TOP)
+    $cache(Selector.HTML_BODY).scrollTop(SCROLL_TOP)
   }
 
 
@@ -58,7 +58,7 @@ var Scroll = ((Scroll) => {
       const $target = $(target)
 
       if ($target) {
-        $cache(Selector.HTML).stop().animate({
+        $cache(Selector.HTML_BODY).stop().animate({
           scrollTop: $target.offset().top - Header.getHeight()
         }, DURATION, EASING)
       }
