@@ -8,8 +8,7 @@ var SideMenu = ((SM) => {
   // ----------------------------------------------------------------------
 
   const ClassName = {
-    PUSHED  : "sidemenu__pusher--pushed",
-    VISIBLE : "sidemenu--visible"
+    PUSHED       : "sidemenu__pusher--pushed"
   }
 
   const Selector = {
@@ -19,6 +18,10 @@ var SideMenu = ((SM) => {
     SIDE_MENU     : "#sidemenu",
     TOGGLE_BUTTON : "#btnSideMenu"
   }
+
+  const DURATION  = 400
+  const EASING    = [300, 40]
+  const MAX_WIDTH = "275px"
 
 
   // ----------------------------------------------------------------------
@@ -30,16 +33,20 @@ var SideMenu = ((SM) => {
   }
 
   SM.hide = function() {
-    if (SM.isVisible()) SM.toggle()
+    $cache(Selector.PUSHER).removeClass(ClassName.PUSHED).velocity("reverse")
+    $cache(Selector.SIDE_MENU).velocity("reverse")
   }
 
   SM.isVisible = function() {
-    return $cache(Selector.SIDE_MENU).hasClass(ClassName.VISIBLE)
+    return $cache(Selector.PUSHER).hasClass(ClassName.PUSHED)
   }
 
-  SM.toggle = function() {
-    $cache(Selector.SIDE_MENU).toggleClass(ClassName.VISIBLE)
-    $cache(Selector.PUSHER).toggleClass(ClassName.PUSHED)
+  SM.show = function() {
+    $cache(Selector.PUSHER)
+      .addClass(ClassName.PUSHED)
+      .velocity({right: MAX_WIDTH}, DURATION, EASING)
+
+    $cache(Selector.SIDE_MENU).velocity({right: "0px"}, DURATION, EASING)
   }
 
 
@@ -49,11 +56,13 @@ var SideMenu = ((SM) => {
 
   SM.init = function() {
     $cache(Selector.TOGGLE_BUTTON).on("click", function() {
-      SM.toggle()
+      SM.isVisible()
+        ? SM.hide()
+        : SM.show()
     })
 
     $cache(document).on("click", function(e) {
-      if (SM.clickedOff(e)) SM.hide()
+      if (SM.clickedOff(e) && SM.isVisible()) SM.hide()
     })
 
     $cache(Selector.SIDE_MENU).on("click", Selector.MENU_ITEM, function() {
@@ -61,7 +70,7 @@ var SideMenu = ((SM) => {
     })
 
     BP.min_lg.addListener(function(e) {
-      if (e.matches) SM.hide()
+      if (e.matches && SM.isVisible()) SM.hide()
     })
   }
 

@@ -7,8 +7,6 @@ $sidemenu--background         : $color--black;
 $sidemenu--border-color       : rgba($color--white, .05);
 $sidemenu--color              : rgba($color--white, .75);
 $sidemenu--hover--color       : $color--yellow;
-$sidemenu--duration           : .75s;
-$sidemenu--easing             : cubic-bezier(0.19, 1, 0.22, 1);
 $sidemenu--max-width          : rem(275px);
 
 $sidemenu__items--margin-top  : rem(55px);  // header outer height
@@ -57,6 +55,10 @@ $sidemenu__item--easing       : "ease-in-out";
   right: 0;
 }
 
+.sidemenu__pusher--pushed {
+  cursor: pointer;
+}
+
 
 // ------------------------------------------------------------------------
 // Font & Color
@@ -77,23 +79,4 @@ $sidemenu__item--easing       : "ease-in-out";
   &:hover {
     color: $sidemenu--hover--color;
   }
-}
-
-
-// ------------------------------------------------------------------------
-// Effects
-// ------------------------------------------------------------------------
-
-.sidemenu,
-.sidemenu__pusher {
-  @include transition("right", $sidemenu--duration, $sidemenu--easing);
-}
-
-.sidemenu--visible {
-  right: 0;
-}
-
-.sidemenu__pusher--pushed {
-  cursor: pointer;
-  right: $sidemenu--max-width;
 }
