@@ -15,7 +15,9 @@
     About.init()
     Projects.init()
     Contact.init()
+
     Animation.init()
+    Scroll.init()
   })
 
 
