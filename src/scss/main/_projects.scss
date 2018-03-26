@@ -5,9 +5,10 @@
 
 $card--border        : rem(1px) solid rgba($color--black, .25);
 $card--border-radius : rem(5px);
-
 $card--margin-bottom : rem(25px);
 $card--margin-x      : rem(12.5px);
+$card--max-width     : rem(360px);
+
 
 // ------------------------------------------------------------------------
 // Structure
@@ -16,9 +17,11 @@ $card--margin-x      : rem(12.5px);
 .cards {
   display: flex;
   flex-direction: column; 
+  align-items: center;
+  justify-content: center;
   margin-top: rem(35px);
   padding: 0 rem(15px);
-
+  
   @include bp-min-md {
     flex-direction: row;
     flex-wrap: wrap;
@@ -31,16 +34,17 @@ $card--margin-x      : rem(12.5px);
   border: $card--border;
   border-radius: $card--border-radius;
   margin-bottom: $card--margin-bottom;
+  max-width: $card--max-width;
   text-align: left;
 
   @include bp-min-md {
     margin-left: $card--margin-x;
     margin-right: $card--margin-x;
-    flex: 1 1 calc(50% - #{$card--margin-x * 2});
+    flex: 1 1 40%;
   }
 
   @include bp-min-lg {
-    flex: 1 1 calc(33% - #{$card--margin-x * 2});
+    flex: 1 1 30%;
   }
 }
 
