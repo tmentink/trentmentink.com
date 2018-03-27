@@ -19,8 +19,8 @@ var SideMenu = ((SM) => {
     TOGGLE_BUTTON : "#btnSideMenu"
   }
 
-  const DURATION  = 400
-  const EASING    = [300, 40]
+  const DURATION  = 250
+  const EASING    = "ease-in-out"
   const MAX_WIDTH = "275px"
 
 
