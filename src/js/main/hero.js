@@ -41,13 +41,13 @@ var Hero = ((Hero) => {
   }
 
   const Typer = {
-    Delay: 3500,
+    Delay: 3000,
     Pause: 300,
     Speed: 75,
     Words: [
       "web applications.",
       "user interfaces.",
-      "business websites.",
+      "JavaScript libraries.",
       "[ your next project ]"
     ]
   }
