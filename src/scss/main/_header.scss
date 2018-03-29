@@ -51,7 +51,7 @@ $header__item--active--unfocused--color : rgba($header--active--color, .5);
 .header__container {
   display: flex;
   margin: 0 auto;
-  max-width: rem(1200px);
+  max-width: $section--max-width;
   width: 100%;
   justify-content: space-between;
 }

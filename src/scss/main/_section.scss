@@ -1,18 +1,28 @@
 
 // ------------------------------------------------------------------------
+// Variables
+// ------------------------------------------------------------------------
+
+$section--max-width   : rem(1200px);
+$section--padding-top : rem(40px);
+$section--padding-bot : rem(60px);
+
+
+// ------------------------------------------------------------------------
 // Structure
 // ------------------------------------------------------------------------
 
 .section__container {
   margin: 0 auto;
-  padding: rem(25px) 0 rem(50px);
+  padding: $section--padding-top 0 $section--padding-bot;
   width: 100%;
-  max-width: rem(1200px);
+  max-width: $section--max-width;
   text-align: center;
 }
 
 .section__header {
-  margin: 0 0 .67em 0;
+  margin: 0;
+  margin-bottom: .65em;
 }
 
 .section__text {
@@ -45,4 +55,3 @@
     font-size: 1.25rem;
   }
 }
-
