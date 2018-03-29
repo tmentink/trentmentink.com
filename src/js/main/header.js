@@ -24,6 +24,12 @@ var Header = ((Header) => {
     return $cache(Selector.HEADER).height()
   }
 
+  Header.setWidth = function(width) {
+    $cache(Selector.HEADER).css({
+      "width" : width
+    })
+  }
+
   Header.toggleActiveStyles = function() {
     const toggle = $cache(document).scrollTop() >= Hero.getHeaderTop() - 100
     $cache(Selector.HEADER).toggleClass(ClassName.ACTIVE, toggle)
