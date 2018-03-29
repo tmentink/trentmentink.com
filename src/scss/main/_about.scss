@@ -3,31 +3,21 @@
 // Structure
 // ------------------------------------------------------------------------
 
-.bars,
-.blocks,
-.about__container{
+.blocks {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-}
-
-.bars,
-.blocks {
   margin-top: rem(35px);
   padding: 0 rem(15px);
-  
-  @include bp-min-lg {
-    width: 50%;
-  }
 }
-
-//
-// Blocks
-//
 
 .block__wrapper {
   padding: rem(15px) 0;
   flex: 1 1 50%;
+
+  @include bp-min-lg {
+    flex: 1 1 25%;
+  }
 }
 
 .block {
@@ -49,55 +39,9 @@
 }
 
 
-//
-// Bars
-//
-
-.bars {
-  @include bp-min-md {
-    padding: 0 rem(40px);
-  }
-}
-
-.bar {
-  display: flex;
-  align-items: center;
-  margin: rem(10px);
-  padding: 0 .75rem;
-  border-radius: $box--border-radius; 
-  height: rem(35px);
-  width: 100%;
-  position: relative;
-}
-
-.bar__title,
-.bar__percent {
-  position: relative;
-  z-index: 10;
-  color: $color--black;
-}
-
-.bar__percent {
-  margin-left: auto;
-}
-
-.bar__fill {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 100%;
-  border-radius: $box--border-radius; 
-}
-
-
 // ------------------------------------------------------------------------
 // Font & Color
 // ------------------------------------------------------------------------
-
-//
-// Blocks
-//
 
 .block {
   background: $color--yellow;
@@ -123,34 +67,11 @@
   font-size: rem(14px);
 }
 
-//
-// Bars
-//
-
-.bar {
-  background: $color--grey;
-}
-
-.bar__fill {
-  background: $color--yellow;
-}
-
-.bar__title,
-.bar__percent {
-  color: $color--black;
-  font-size: rem(14px);
-}
-
-.bar__title {
-  font-weight: bold;
-}
-
 
 // ------------------------------------------------------------------------
 // Effects
 // ------------------------------------------------------------------------
 
-.bar,
 .block {
   @include raised-shadow;
 }

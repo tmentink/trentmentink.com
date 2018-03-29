@@ -12,10 +12,9 @@ var About = ((About) => {
   }
 
   const Selector = {
-    BARS     : "#bars",
-    BAR_FILL : ".bar__fill",
-    BLOCKS   : "#blocks",
-    TEXT     : "#about__text"
+    BLOCKS        : "#blocks",
+    BLOCK_WRAPPER : ".block__wrapper",
+    TEXT          : "#about__text"
   }
 
 
@@ -23,45 +22,24 @@ var About = ((About) => {
   // Public Methods
   // ----------------------------------------------------------------------
 
-  About.addBarsAnimation = function() {
-    const delay = 75
-
-    Animation.add({
-      selector : Selector.BARS,
-      offset   : 25,
-      animation() {
-        $cache(Selector.BAR_FILL).each(function(i) {
-          const $fill   = $(this)
-          const percent = $fill.attr(Data.PERCENT)
-
-          $fill.velocity({right: `${100 - percent}%`}, {
-            delay: delay * i
-          })
-        })
-      }
-    })
-  }
-
   About.addBlocksAnimation = function() {
-    let direction = "translateY"
-    let distance  = "50px"
+    const delay = 100
 
-    if (BP.min_lg.matches) {
-      direction = "translateX"
-      distance  = "-50px"
-    }
-
-    $.Velocity.hook($cache(Selector.BLOCKS), direction, distance)
-    $.Velocity.hook($cache(Selector.BLOCKS), "opacity", "0")
+    $.Velocity.hook($cache(Selector.BLOCK_WRAPPER), "translateY", "50px")
+    $.Velocity.hook($cache(Selector.BLOCK_WRAPPER), "opacity", "0")
 
     Animation.add({
       selector : Selector.BLOCKS,
       offset   : 25,
       animation() {
-        $cache(Selector.BLOCKS).velocity({
-          translateY : "0px",
-          translateX : "0px",
-          opacity    : 1
+        $cache(Selector.BLOCK_WRAPPER).each(function(i) {
+          $(this).velocity({
+            translateY : "0px",
+            opacity    : 1
+          },
+          {
+            delay: delay * i
+          })
         })
       }
     })
@@ -88,7 +66,6 @@ var About = ((About) => {
   // ----------------------------------------------------------------------
 
   About.init = function() {
-    About.addBarsAnimation()
     About.addBlocksAnimation()
     About.addTextAnimation()
   }
