@@ -63,6 +63,16 @@
 // Transform
 // ------------------------------------------------------------------------
 
+@mixin backface-hidden {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+@mixin hard-acc {
+  @include transform(translateZ(0));
+  @include backface-hidden;
+}
+
 @mixin transform($value) {
   -webkit-transform: #{$value};
       -ms-transform: #{$value};
@@ -84,11 +94,3 @@
   -webkit-transition-delay: #{$delay};
           transition-delay: #{$delay};
 }
-
-@mixin hard-acc {
-  @include transform(translateZ(0));
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-}
-
-
