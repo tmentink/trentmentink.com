@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,700,900">
-        <link rel="stylesheet" href="css/main.css?v=1.0.0" />
+        <link rel="stylesheet" href="css/main.css?v=1.1.0" />
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     </head>
     <body>
@@ -146,56 +146,119 @@
             </div>
 
             <div id="cards" class="cards">
-              <a class="card" href="http://gmapsjs.com" target="_blank">
+              <div class="card">
+                <i class="card__close fa fa-times"></i>
                 <img class="card__img" src="img/projects/gmaps.jpg">
-                <div class="card__footer">
+                <div class="card__header">
                   <div class="card__title">gmaps.js</div>
                   <div class="card__subtitle">JavaScript</div>
                 </div>
-              </a>
+                <div class="card__body">
+                  A JavaScript library that enables the rapid development of robust Google Maps web applications by providing extended functionality with a more streamlined API.
+                  <a class="card__button" href="http://gmapsjs.com" target="_blank">
+                    View Website
+                  </a>
+                </div>
+              </div>
 
-              <a class="card" href="https://github.com/tmentink/jquery.geocomplete" target="_blank">
+              <div class="card">
+                <i class="card__close fa fa-times"></i>
                 <img class="card__img" src="img/projects/jquery_geocomplete.jpg">
-                <div class="card__footer">
+                <div class="card__header">
                   <div class="card__title">jQuery Geocomplete</div>
                   <div class="card__subtitle">JavaScript</div>
                 </div>
-              </a>
+                <div class="card__body">
+                  A jQuery plugin for the Google Maps Autocomplete control.
+                  The plugin fixes some annoying layout bugs and provides extended functionality. 
+                  <a class="card__button" href="https://github.com/tmentink/jquery.geocomplete" target="_blank">
+                    View Website
+                  </a>
+                </div>
+              </div>
 
-              <a class="card" href="https://github.com/tmentink/poly-split" target="_blank">
+              <div class="card">
+                <i class="card__close fa fa-times"></i>
                 <img class="card__img" src="img/projects/poly_split.jpg">
-                <div class="card__footer">
+                <div class="card__header">
                   <div class="card__title">Poly-Split</div>
                   <div class="card__subtitle">JavaScript</div>
                 </div>
-              </a>
+                <div class="card__body">
+                  A Google Maps plugin that extends the polygon overlay with a new method to easily split it in two.
+                  Simply draw a polygon over another and then split out the difference.
+                  <a class="card__button" href="https://github.com/tmentink/poly-split" target="_blank">
+                    View Website
+                  </a>
+                </div>
+              </div>
 
-              <a class="card" href="http://projects.trentmentink.com/sliding_puzzle/" target="_blank">
+              <div class="card">
+                <i class="card__close card__close--white fa fa-times"></i>
                 <img class="card__img" src="img/projects/sliding_puzzle.jpg">
-                <div class="card__footer">
+                <div class="card__header">
                   <div class="card__title">Sliding Puzzle</div>
                   <div class="card__subtitle">Gaming</div>
                 </div>
-              </a>
+                <div class="card__body">
+                  An HTML5 game that randomly shuffles images into tiles.
+                  If you get stuck, you can watch the AI solve the puzzle in the shortest amount of steps.
+                  All images were created by Kelly N. Hagan.
+                  <a class="card__button" href="http://projects.trentmentink.com/sliding_puzzle/" target="_blank">
+                    Play Game
+                  </a>
+                </div>
+              </div>
 
-              <a class="card" href="http://projects.trentmentink.com/frameshop/" target="_blank">
+              <div class="card">
+                <i class="card__close fa fa-times"></i>
                 <img class="card__img" src="img/projects/frameshop.jpg">
-                <div class="card__footer">
+                <div class="card__header">
                   <div class="card__title">The Frameshop</div>
                   <div class="card__subtitle">Website</div>
                 </div>
-              </a>
+                <div class="card__body">
+                  The Frameshop is a family owned business specializing in custom framing.
+                  I worked closely with them to develop a brand new website with a responsive design.
+                  <a class="card__button" href="http://projects.trentmentink.com/frameshop/" target="_blank">
+                    View Website
+                  </a>
+                </div>
+              </div>
 
-              <a class="card" href="http://projects.trentmentink.com/simon_says/" target="_blank">
+              <div class="card">
+                <i class="card__close card__close--white fa fa-times"></i>
                 <img class="card__img" src="img/projects/simon_says.jpg">
-                <div class="card__footer">
+                <div class="card__header">
                   <div class="card__title">Simon Says</div>
                   <div class="card__subtitle">Gaming</div>
                 </div>
-              </a>
+                <div class="card__body">
+                  Simon Says is a web based game that utilizes HTML5 features like data attributes, audio and local storage.
+                  Test your memory with this fresh take on a classic game.
+                  <a class="card__button" href="http://projects.trentmentink.com/simon_says/" target="_blank">
+                    Play Game
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
+
+
+        <!-- Card Overlay
+        =========================================== -->
+        <div id="card-overlay" class="card-overlay">
+          <div id="card-overlay__content" class="card-overlay__content">
+            <div id="card-placeholder" class="card card--hidden">
+              <img class="card__img" src="img/projects/gmaps.jpg">
+              <div class="card__header">
+                <div class="card__title">gmaps.js</div>
+                <div class="card__subtitle">JavaScript</div>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
         <!-- Contact
@@ -239,6 +302,6 @@
       <script type="text/javascript" src="vendor/jquery.min.js" defer></script>
       <script type="text/javascript" src="vendor/velocity.min.js" defer></script>
       <script type="text/javascript" src="vendor/typeit.min.js" defer></script>
-      <script type="text/javascript" src="js/main.js?v=1.0.0" defer></script>
+      <script type="text/javascript" src="js/main.js?v=1.1.0" defer></script>
     </body>
 </html>

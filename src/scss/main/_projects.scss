@@ -3,11 +3,12 @@
 // Variables
 // ------------------------------------------------------------------------
 
-$card--border        : rem(1px) solid rgba($color--black, .25);
-$card--border-radius : rem(5px);
-$card--margin-bottom : rem(25px);
-$card--margin-x      : rem(12.5px);
-$card--max-width     : rem(360px);
+$card--border                : rem(1px) solid rgba($color--black, .25);
+$card--border-radius         : rem(5px);
+$card--margin-bottom         : 1.5rem;
+$card--margin-x              : $card--margin-bottom / 2;
+$card--max-width             : rem(360px);
+$card--padding               : 1rem;
 
 
 // ------------------------------------------------------------------------
@@ -19,12 +20,19 @@ $card--max-width     : rem(360px);
   flex-direction: column; 
   align-items: center;
   justify-content: center;
-  margin-top: rem(35px);
-  padding: 0 rem(15px);
+  margin-top: 2rem;
+  padding: 0 1rem;
   
   @include bp-min-md {
     flex-direction: row;
     flex-wrap: wrap;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  @include bp-min-lg {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -34,18 +42,29 @@ $card--max-width     : rem(360px);
   border: $card--border;
   border-radius: $card--border-radius;
   margin-bottom: $card--margin-bottom;
+  padding-bottom: $card--padding;
   max-width: $card--max-width;
   text-align: left;
+  cursor: pointer;
+  @include backface-hidden;
 
   @include bp-min-md {
     margin-left: $card--margin-x;
     margin-right: $card--margin-x;
-    flex: 1 1 40%;
+    flex: 1 1 45%;
   }
 
   @include bp-min-lg {
     flex: 1 1 30%;
   }
+}
+
+.card--expanded {
+  max-width: unset;
+}
+
+.card--hidden {
+  visibility: hidden;
 }
 
 .card__img {
@@ -54,10 +73,84 @@ $card--max-width     : rem(360px);
   border-top-right-radius: $card--border-radius;
 }
 
-.card__footer {
-  position: relative;
-  padding: .5rem 1rem;
+.card__header {
+  padding: $card--padding;
+  padding-bottom: 0;
+}
+
+.card__body {
+  display: none;
+  margin-top: .5rem;
+  padding: 0 $card--padding;
+}
+
+.card__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: .75rem;
   cursor: pointer;
+  visibility: hidden;
+}
+
+.card__close--show {
+  visibility: visible;
+}
+
+.card__button {
+  display: block;
+  padding: .75rem 1rem;
+  margin-top: $card--padding;
+  border-radius: $card--border-radius;
+  text-align: center;
+}
+
+//
+// Card Overlay
+//
+
+.card-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 3000;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.card-overlay__content {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  min-height: 100%;
+
+  .card {
+    flex: 0 0 auto;
+  }
+
+  .card--hidden {
+    display: none;
+  }
+
+  @include bp-max-sm {
+    .card {
+      min-height: 100vh;
+      margin-bottom: 0;
+      border-radius: 0;
+      border: none;
+    }
+
+    .card__img {
+      border-radius: 0;
+    }
+  }
+
+  @include bp-min-md {
+    padding: rem(50px) 0;
+  }
 }
 
 
@@ -85,6 +178,28 @@ $card--max-width     : rem(360px);
   font-size: rem(14px);
 }
 
+.card__close {
+  color: $color--black;
+  font-size: 1.25rem !important;
+}
+
+.card__close--white {
+  color: $color--white;
+}
+
+.card__button {
+  background: $color--black;
+  color: $color--white;
+  font-size: $button--font-size;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.card-overlay {
+  background: rgba($color--grey, .90);
+}
+
 
 // ------------------------------------------------------------------------
 // Effects
@@ -96,5 +211,17 @@ $card--max-width     : rem(360px);
 
   &:hover {
     @include lifted-shadow;
+  }
+}
+
+.card.velocity-animating {
+  .card__body {
+    margin-top: 0;
+  }
+}
+
+.card-overlay__content {
+  .card:hover {
+    @include raised-shadow;
   }
 }

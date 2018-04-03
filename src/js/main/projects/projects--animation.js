@@ -15,20 +15,21 @@ var Projects = ((Projects) => {
 
 
   // ----------------------------------------------------------------------
-  // Public Methods
+  // Public
   // ----------------------------------------------------------------------
 
   Projects.addCardsAnimation = function() {
-    const delay = 100
+    const delay  = 100
+    const $cards = $cache(Selector.CARDS).find(Selector.CARD)
 
-    $.Velocity.hook($cache(Selector.CARD), "translateY", "50px")
-    $.Velocity.hook($cache(Selector.CARD), "opacity", "0")
+    $.Velocity.hook($cards, "translateY", "50px")
+    $.Velocity.hook($cards, "opacity", "0")
 
     Animation.add({
       selector : Selector.CARDS,
       offset   : 50,
       animation() {
-        $cache(Selector.CARD).each(function(i) {
+        $cards.each(function(i) {
           $(this).velocity({
             translateY : "0px",
             opacity    : 1
@@ -54,16 +55,6 @@ var Projects = ((Projects) => {
         })
       }
     })
-  }
-
-
-  // ----------------------------------------------------------------------
-  // Init
-  // ----------------------------------------------------------------------
-
-  Projects.init = function() {
-    Projects.addCardsAnimation()
-    Projects.addTextAnimation()
   }
 
 
