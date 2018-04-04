@@ -26,7 +26,7 @@ var Projects = ((Projects) => {
   const CARD_MARGIN_X   = 12
   const DURATION        = 300
   const EASING          = "ease-in-out"
-  const MD_WIDTH        = 500
+  const MD_WIDTH        = 400
   const OVERLAY_PADDING = 50
   const SM_BODY_HEIGHT  = "60vh"
   const SM_WIDTH        = "100vw"
@@ -40,7 +40,6 @@ var Projects = ((Projects) => {
   // ----------------------------------------------------------------------
 
   class Card {
-
     constructor($card) {
       this.$card      = $card
       this.$body      = $card.find(Selector.CARD_BODY)
@@ -158,7 +157,7 @@ var Projects = ((Projects) => {
         easing   : EASING,
         complete : () => {
           this.$body.css({height: "unset"})
-          this.$body.velocity({opacity: 1}, DURATION - 50, EASING)
+          this.$body.velocity({opacity: 1}, DURATION * .75, EASING)
         }
       })
     }
@@ -199,19 +198,18 @@ var Projects = ((Projects) => {
         zIndex   : Z_INDEX
       })
     }
-
   }
 
   const Overlay = {
     hide() {
       $cache(Selector.OVERLAY).velocity("fadeOut", {
-        duration : DURATION - 50,
+        duration : DURATION * .75,
         easing   : EASING
       })
     },
     show() {
       $cache(Selector.OVERLAY).velocity("fadeIn", {
-        duration : DURATION - 50,
+        duration : DURATION * .75,
         easing   : EASING
       })
     }
