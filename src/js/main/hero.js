@@ -43,12 +43,12 @@ var Hero = ((Hero) => {
   const Typer = {
     Delay: 3000,
     Pause: 300,
-    Speed: 75,
+    Speed: 60,
     Words: [
       "web applications.",
       "user interfaces.",
       "JavaScript libraries.",
-      "[ your next project ]"
+      "your next project!"
     ]
   }
 
