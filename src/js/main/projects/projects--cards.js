@@ -24,7 +24,7 @@ var Projects = ((Projects) => {
   }
 
   const CARD_MARGIN_X   = 12
-  const DURATION        = 300
+  const DURATION        = 250
   const EASING          = "ease-in-out"
   const MD_WIDTH        = 400
   const OVERLAY_PADDING = 50
@@ -157,7 +157,7 @@ var Projects = ((Projects) => {
         easing   : EASING,
         complete : () => {
           this.$body.css({height: "unset"})
-          this.$body.velocity({opacity: 1}, DURATION * .75, EASING)
+          this.$body.velocity({opacity: 1}, DURATION, EASING)
         }
       })
     }
@@ -203,13 +203,13 @@ var Projects = ((Projects) => {
   const Overlay = {
     hide() {
       $cache(Selector.OVERLAY).velocity("fadeOut", {
-        duration : DURATION * .75,
+        duration : DURATION,
         easing   : EASING
       })
     },
     show() {
       $cache(Selector.OVERLAY).velocity("fadeIn", {
-        duration : DURATION * .75,
+        duration : DURATION,
         easing   : EASING
       })
     }
