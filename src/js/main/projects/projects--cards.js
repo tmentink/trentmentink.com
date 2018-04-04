@@ -46,7 +46,7 @@ var Projects = ((Projects) => {
       this.index      = $cache(Selector.CARDS).find(Selector.CARD).index($card)
       this.bodyHeight = SM_BODY_HEIGHT
       this.final      = {
-        top   : $cache(document).scrollTop(),
+        top   : Scroll.getPosition(),
         left  : 0,
         width : SM_WIDTH
       }

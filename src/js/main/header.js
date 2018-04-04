@@ -31,7 +31,7 @@ var Header = ((Header) => {
   }
 
   Header.toggleActiveStyles = function() {
-    const toggle = $cache(document).scrollTop() >= Hero.getHeaderTop() - 100
+    const toggle = Scroll.getPosition() >= Hero.getHeaderTop() - 100
     $cache(Selector.HEADER).toggleClass(ClassName.ACTIVE, toggle)
   }
 

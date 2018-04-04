@@ -27,7 +27,7 @@ var Scroll = ((Scroll) => {
   // ----------------------------------------------------------------------
 
   Scroll.disable = function() {
-    SCROLL_TOP = $cache(document).scrollTop()
+    SCROLL_TOP = Scroll.getPosition()
 
     $cache(Selector.BODY).css({
       "position"    : "fixed",
@@ -50,7 +50,11 @@ var Scroll = ((Scroll) => {
     })
 
     Header.setWidth("100%")
-    $cache(document).scrollTop(SCROLL_TOP)
+    Scroll.setPosition(SCROLL_TOP)
+  }
+
+  Scroll.getPosition = function() {
+    return $cache(document).scrollTop()
   }
 
   Scroll.getScrollBarWidth = function() {
@@ -64,6 +68,10 @@ var Scroll = ((Scroll) => {
     }
 
     return SCROLLBAR_WIDTH
+  }
+
+  Scroll.setPosition = function(value) {
+    $cache(document).scrollTop(value)
   }
 
 
