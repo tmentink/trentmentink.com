@@ -214,6 +214,14 @@ $card--padding               : 1rem;
   }
 }
 
+.card__button {
+  @include transition("background");
+
+  &:hover {
+    background: darken($color--black, 10%);
+  }
+}
+
 .card.velocity-animating {
   .card__body {
     margin-top: 0;
