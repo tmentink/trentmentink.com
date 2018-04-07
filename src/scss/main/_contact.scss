@@ -5,6 +5,14 @@
 
 #contact__container {
   padding: $section--padding-bot + rem(40px) 0;
+
+  .button {
+    margin-top: 2rem;
+
+    @include bp-min-md {
+      margin-top: 3rem;
+    }
+  }
 }
 
 

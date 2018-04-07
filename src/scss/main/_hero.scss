@@ -59,6 +59,16 @@ $hero__image--easing        : cubic-bezier(0.680, -0.550, 0.265, 1.4);
   }
 }
 
+.hero {
+  .button {
+    margin-top: 2rem;
+
+    @include bp-min-md {
+      margin-top: 3rem;
+    }
+  }
+}
+
 
 // ------------------------------------------------------------------------
 // Font & Color

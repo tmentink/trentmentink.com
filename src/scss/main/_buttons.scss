@@ -3,19 +3,8 @@
 // Variables
 // ------------------------------------------------------------------------
 
-$button--duration             : .3s;
-$button--easing               : ease-in-out;
-$button--font-size            : rem(12px);
-$button--padding-y            : .75rem;
-$button--padding-x            : 2rem;
-
-$button--accent--border-color : $color--yellow;
-$button--accent--color        : $color--white;
-$button--accent--color--hover : $color--black;
-
-$button--black--border-color  : $color--black;
-$button--black--color         : $color--black;
-$button--black--color--hover  : $color--yellow;
+$button--font-size  : rem(12px);
+$button--padding-x  : 2rem;
 
 
 // ------------------------------------------------------------------------
@@ -23,15 +12,16 @@ $button--black--color--hover  : $color--yellow;
 // ------------------------------------------------------------------------
 
 .button {
-  border: rem(2px) solid;
-  border-radius: rem(50px);
-  padding: $button--padding-y $button--padding-x;
-  margin-top: 2rem;
   display: inline-block;
+  border: rem(2px) solid transparent;
+  border-radius: rem(50px);
+  margin: 1rem auto;
+  padding: .6rem $button--padding-x;
   cursor: pointer;
+  white-space: nowrap;
 
   @include bp-min-md {
-    margin-top: 3rem;
+   padding: .75rem $button--padding-x;
   }
 }
 
@@ -51,14 +41,14 @@ $button--black--color--hover  : $color--yellow;
   }
 }
 
-.button--accent {
-  color: $button--accent--color;
-  border-color: $button--accent--border-color;
+.button--black {
+  color: $color--black;
+  border-color: $color--black;
 }
 
-.button--black {
-  color: $button--black--color;
-  border-color: $button--black--border-color;
+.button--yellow {
+  color: $color--white;
+  border-color: $color--yellow;
 }
 
 
@@ -67,7 +57,7 @@ $button--black--color--hover  : $color--yellow;
 // ------------------------------------------------------------------------
 
 .button {
-  @include transition("all", $button--duration, $button--easing);
+  @include transition("all", .2s, "ease-in-out");
 
   &:hover {
     padding-left: $button--padding-x * 1.25;
@@ -75,16 +65,16 @@ $button--black--color--hover  : $color--yellow;
   }
 }
 
-.button--accent {
+.button--black {
   &:hover {
-    background: $button--accent--border-color;
-    color: $button--accent--color--hover;
+    background: $color--black;
+    color: $color--yellow;
   }
 }
 
-.button--black {
+.button--yellow {
   &:hover {
-    background: $button--black--border-color;
-    color: $button--black--color--hover;
+    background: $color--yellow;
+    color: $color--black;
   }
 }
