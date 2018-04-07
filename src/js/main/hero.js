@@ -73,6 +73,12 @@ var Hero = ((Hero) => {
     $img.css("background-image", `url('${path}')`)
   }
 
+  Hero.setMobileHeight = function() {
+    if (BP.max_sm.matches) {
+      $cache(Selector.HERO).css({height: $cache(window).height()})
+    }
+  }
+
   Hero.setRandomImageIndex = function() {
     Images.Index = Math.floor(Math.random() * (Images.Paths.length +1))
   }
@@ -109,6 +115,7 @@ var Hero = ((Hero) => {
 
   Hero.init = function() {
     Hero.setRandomImageIndex()
+    Hero.setMobileHeight()
 
     $cache(Selector.HERO).find(Selector.HERO_IMAGE).each(function() {
       Hero.setImagePath($(this), Hero.getNextImagePath())
