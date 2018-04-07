@@ -92,20 +92,10 @@ var Contact = ((Contact) => {
     },
 
     getScale() {
-      const radius = Button.getHeight() / 2
-      const pos    = $cache(Selector.MODAL_BG).position()
       const winH   = window.innerHeight
       const winW   = window.innerWidth
-
-      const maxX = (pos.left > winW / 2)
-        ? pos.left
-        : winW - pos.left
-
-      const maxY = (pos.top > winH / 2)
-        ? pos.top
-        : winH - pos.top
-
-      return Math.ceil(Math.sqrt(Math.pow(maxX, 2) + Math.pow(maxY, 2)) / radius)
+      const scale  = Math.max(winH, winW) / Button.getHeight()
+      return scale * 2.25
     },
 
     hideContent() {
