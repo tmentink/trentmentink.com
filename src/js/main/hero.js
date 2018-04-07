@@ -115,7 +115,6 @@ var Hero = ((Hero) => {
 
   Hero.init = function() {
     Hero.setRandomImageIndex()
-    Hero.setMobileHeight()
 
     $cache(Selector.HERO).find(Selector.HERO_IMAGE).each(function() {
       Hero.setImagePath($(this), Hero.getNextImagePath())

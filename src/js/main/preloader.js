@@ -34,6 +34,7 @@ var Preloader = ((Preloader) => {
     $cache(Selector.PRELOADER).addClass(ClassName.FADE)
     Hero.startSlideshow()
     Hero.startTyper()
+    Hero.setMobileHeight()
 
     setTimeout(() => {
       $cache(Selector.PRELOADER).addClass(ClassName.HIDE)
