@@ -7,7 +7,9 @@ $font-family--base : "Montserrat", sans-serif;
 $font-size--base   : 16px;
 $line-height--base : 1.6;
 
-html {
+html,
+input,
+textarea {
   font-size: $font-size--base;
   font-family: $font-family--base;
   line-height: $line-height--base;
