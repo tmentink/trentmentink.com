@@ -39,6 +39,7 @@ $field__input--padding  : 0 0 .5rem 0;
 .field__input {
   border: none;
   border-bottom: rem(1px) solid;
+  border-radius: 0;
   padding: $field__input--padding;
   width: 100%;
   outline: none;
@@ -46,6 +47,7 @@ $field__input--padding  : 0 0 .5rem 0;
 
 textarea.field__input {
   border: rem(1px) solid;
+  border-radius: rem(5px);
   padding: .75rem;
   min-height: rem(175px);
   resize: none;
