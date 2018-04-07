@@ -1,0 +1,80 @@
+
+// ------------------------------------------------------------------------
+// Structure
+// ------------------------------------------------------------------------
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  z-index: 3000;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modal--hidden {
+  display: none;
+}
+
+.modal__bg {
+  border-radius: 50%;
+  z-index: 3000;
+}
+
+.modal__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  cursor: pointer;
+
+  @include bp-min-md {
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+.modal__header {
+  margin: 0 0 3rem 0;
+}
+
+.modal__content {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 5rem 0 2.5rem;
+  min-height: 100%;
+  max-width: rem(700px);
+  opacity: 0;
+}
+
+
+// ------------------------------------------------------------------------
+// Font & Color
+// ------------------------------------------------------------------------
+
+.modal {
+  background: transparent;
+  color: $color--white;
+}
+
+.modal__bg {
+  background: $color--black;
+}
+
+.modal__close {
+  font-size: 1.5rem !important;
+}
+
+.modal__header {
+  font-size: rem(20px);
+
+  @include bp-min-md {
+    font-size: rem(34px);
+  }
+}

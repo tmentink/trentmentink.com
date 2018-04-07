@@ -1,0 +1,170 @@
+
+// ------------------------------------------------------------------------
+// Variables
+// ------------------------------------------------------------------------
+
+$field__input--duration : .15s;
+$field__input--easing   : "ease-out";
+$field--padding-x       : 1.5rem;
+$field__input--padding  : 0 0 .5rem 0;
+
+
+// ------------------------------------------------------------------------
+// Structure
+// ------------------------------------------------------------------------
+
+.form {
+  position: relative;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.field {
+  position: relative;
+  padding: 0 $field--padding-x;
+  padding-bottom: 2.25rem;
+  width: 100%;
+  text-align: left;
+}
+
+.field__label {
+  position: absolute;
+  top: 0;
+  left: $field--padding-x;
+  padding: $field__input--padding;
+  cursor: text;
+  pointer-events: none;
+}
+
+.field__input {
+  border: none;
+  border-bottom: rem(1px) solid;
+  padding: $field__input--padding;
+  width: 100%;
+  outline: none;
+}
+
+textarea.field__input {
+  border: rem(1px) solid;
+  padding: .75rem;
+  min-height: rem(175px);
+  resize: none;
+}
+
+.field__helper {
+  display: block;
+  margin-top: .5rem;
+  min-height: 1.2rem;
+  
+  &:after {
+    content: "";
+    display: block;
+    opacity: 0;
+  }
+}
+
+textarea.field__input + .field__helper {
+  margin-top: 0;
+}
+
+.form__asterisk {
+  margin: 1.5rem 0;
+}
+
+
+//
+// Field Sizes
+//
+.fields {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@include bp-min-md {
+  .fields {
+    flex-wrap: nowrap;
+  }
+
+  .two.fields > .field {
+    width: 50%;
+  }
+}
+
+
+// ------------------------------------------------------------------------
+// Font & Color
+// ------------------------------------------------------------------------
+
+.field__input,
+textarea.field__input {
+  background: transparent;
+  border-color: $color--white;
+  color: $color--white;
+}
+
+.field__helper {
+  color: inherit;
+  font-size: .75rem;
+}
+
+.form__asterisk {
+  color: rgba($color--white, .75);
+  font-size: .9rem;
+}
+
+
+//
+// States
+//
+.field--focused {
+  color: $color--yellow;
+
+  .field__input {
+    border-color: $color--yellow;
+    box-shadow: 0 1px 0 0 $color--yellow;
+  }
+
+  textarea.field__input {
+    box-shadow: none;
+  }
+}
+
+.field--invalid {
+  color: $color--red;
+  
+  .field__input {
+    border-color: $color--red;
+    box-shadow: 0 1px 0 0 $color--red;
+  }
+
+  textarea.field__input {
+    box-shadow: none;
+  }
+
+  .field__helper:after {
+    content: attr(data-error);
+    opacity: 1;
+  }
+}
+
+
+// ------------------------------------------------------------------------
+// Effects
+// ------------------------------------------------------------------------
+
+.field__input {
+  @include transition("border, box-shadow", $field__input--duration, $field__input--easing);
+}
+
+.field__label {
+  @include transition("transform, font-size, color", $field__input--duration, $field__input--easing);
+}
+
+.field--focused,
+.field--has-value {
+  .field__label {
+    font-size: .75rem;
+    @include transform(translateY(-1.3rem))
+  }
+}

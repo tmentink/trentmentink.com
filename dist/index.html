@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,700,900">
-        <link rel="stylesheet" href="css/main.css?v=1.1.0" />
+        <link rel="stylesheet" href="css/main.css?v=1.2.0" />
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     </head>
     <body>
@@ -270,9 +270,55 @@
               I'm currently accepting new projects and would love to hear about yours.
               Please send me an email with the details.
             </div>
-            <a class="button button--black" href="mailto:trentmentink@gmail.com">trentmentink@gmail.com</a>
+            <span id="contact__button" class="button button--black">Get Started</span>
           </div>
         </section>
+
+
+        <!-- Contact Form
+        =========================================== -->
+        <div id="modal__bg" class="modal__bg"></div>
+        <div id="modal" class="modal modal--hidden">
+          <div id="modal__content" class="modal__content">
+            <i id="modal__close" class="modal__close fa fa-times"></i>
+            <h3 class="modal__header">Ok, just a few quick questions.</h3>
+            <form id="form" class="form" action="https://formspree.io/trentmentink@gmail.com" method="POST">
+              <div class="two fields">
+                <div class="field">
+                  <label class="field__label">Name *</label>
+                  <input id="txtName" class="field__input" type="text" name="name" data-required>
+                  <span class="field__helper" data-error="This is required"></span>
+                </div>
+                <div class="field">
+                  <label class="field__label">Email address *</label>
+                  <input id="txtEmail" class="field__input" type="email" name="email" data-required>
+                  <span class="field__helper" data-error="This is required"></span>
+                </div>
+              </div>
+              
+              <div class="two fields">
+                <div class="field">
+                  <label class="field__label">Phone number</label>
+                  <input id="txtPhone" class="field__input" type="text" name="phone">
+                  <span class="field__helper"></span>
+                </div>
+                <div class="field">
+                  <label class="field__label">Website</label>
+                  <input id="txtWebsite" class="field__input" type="text" name="website">
+                  <span class="field__helper"></span>
+                </div>
+              </div>
+
+              <div class="field">
+                <textarea id="txtMessage" class="field__input" name="message" data-required placeholder="Tell me about your project... what is it? Why are you doing it? How can I help? Timeline and budget details are also appreciated. *"></textarea>
+                <span class="field__helper" data-error="This is required"></span>
+              </div>
+
+              <span id="btnSubmit" class="button button--yellow">Submit your project</span>
+              <div class="form__asterisk">* Required</div>
+            </form>
+          </div>
+        </div>
 
 
         <!-- Footer
@@ -302,6 +348,6 @@
       <script type="text/javascript" src="vendor/jquery.min.js" defer></script>
       <script type="text/javascript" src="vendor/velocity.min.js" defer></script>
       <script type="text/javascript" src="vendor/typeit.min.js" defer></script>
-      <script type="text/javascript" src="js/main.js?v=1.1.0" defer></script>
+      <script type="text/javascript" src="js/main.js?v=1.2.0" defer></script>
     </body>
 </html>

@@ -15,6 +15,7 @@
     About.init()
     Projects.init()
     Contact.init()
+    Form.init()
 
     Animation.init()
     Scroll.init()

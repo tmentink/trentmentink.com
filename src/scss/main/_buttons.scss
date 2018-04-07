@@ -78,3 +78,20 @@ $button--padding-x  : 2rem;
     color: $color--black;
   }
 }
+
+.button--morphed {
+  color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+
+  &:hover {
+    color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &.button--black,
+  &.button--black:hover {
+    background: $color--black;
+  }
+}
