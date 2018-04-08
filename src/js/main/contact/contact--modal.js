@@ -68,6 +68,7 @@ var Contact = ((Contact) => {
   const Modal = {
     close() {
       $cache(Selector.MODAL_BG).velocity("reverse", {
+        easing   : "ease-out",
         begin() {
           Modal.hideContent()
         },
@@ -83,8 +84,8 @@ var Contact = ((Contact) => {
       Scroll.disable()
 
       $cache(Selector.MODAL_BG).velocity({scale: Modal.getScale()}, {
-        duration : 300,
-        easing   : "ease-in-out",
+        duration : 325,
+        easing   : "ease-in",
         complete() {
           Modal.showContent()
         }
