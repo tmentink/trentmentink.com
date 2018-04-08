@@ -1,0 +1,56 @@
+
+// ------------------------------------------------------------------------
+// Structure
+// ------------------------------------------------------------------------
+
+.outdated {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 3rem 1rem;
+  text-align: center;
+  z-index: 4000;
+}
+
+.outdated--hidden {
+  display: none;
+}
+
+.outdated__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.outdated__header {
+  margin: 1rem auto;
+}
+
+
+// ------------------------------------------------------------------------
+// Font & Color
+// ------------------------------------------------------------------------
+
+.outdated {
+  background: $color--yellow;
+  color: $color--black;
+}
+
+.outdated__close {
+  font-size: 1.25rem !important;
+}
+
+.outdated__ascii,
+.outdated__header {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.outdated__text {
+  @include bp-min-md {
+    font-size: 1.25rem;
+  }
+}

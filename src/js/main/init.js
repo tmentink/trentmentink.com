@@ -8,6 +8,7 @@
   // ----------------------------------------------------------------------
 
   $(document).ready(function() {
+    Outdated.init()
     Preloader.init()
     Header.init()
     Hero.init()
