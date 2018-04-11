@@ -3,9 +3,7 @@
 // Variables
 // ------------------------------------------------------------------------
 
-$section--max-width   : rem(1200px);
-$section--padding-top : rem(40px);
-$section--padding-bot : rem(60px);
+$section--max-width  : rem(1200px);
 
 
 // ------------------------------------------------------------------------
@@ -14,10 +12,18 @@ $section--padding-bot : rem(60px);
 
 .section__container {
   margin: 0 auto;
-  padding: $section--padding-top 0 $section--padding-bot;
+  padding: rem(40px) 0 rem(60px);
   width: 100%;
   max-width: $section--max-width;
   text-align: center;
+
+  @include bp-min-md {
+    padding: rem(60px) 0 rem(80px);
+  }
+
+  @include bp-min-xl {
+    padding: rem(80px) 0 rem(100px);
+  }
 }
 
 .section__header {
