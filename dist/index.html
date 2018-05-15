@@ -9,8 +9,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,700,900">
-        <link rel="stylesheet" href="css/main.css?v=1.2.0" />
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/main.css?v=1.3.0" />
     </head>
     <body>
 
@@ -150,106 +150,197 @@
         =========================================== -->
         <section id="projects">
           <div class="section__container">
-             <h1 class="section__header">My Projects</h1>
-             <div id="projects__text" class="section__text">
+            <h1 class="section__header">My Projects</h1>
+            <div id="projects__text" class="section__text">
               Here is a collection of some of my past projects.
               You can head over to my <a class="link link--dotted" href="https://github.com/tmentink" target="_blank">GitHub</a> if you'd like to see more.
             </div>
 
             <div id="cards" class="cards">
               <div class="card">
-                <i class="card__close fa fa-times"></i>
-                <img class="card__img" src="img/projects/gmaps.jpg">
-                <div class="card__header">
-                  <div class="card__title">gmaps.js</div>
-                  <div class="card__subtitle">JavaScript</div>
-                </div>
-                <div class="card__body">
-                  A JavaScript library that enables the rapid development of robust Google Maps web applications by providing extended functionality with a more streamlined API.
-                  <a class="card__button" href="http://gmapsjs.com" target="_blank">
-                    View Website
+                <i class="card__close card__close--white fa fa-times"></i>
+                <img id="card__img" class="card__img" src="img/projects/gmaps.png">
+                <div class="card__links">
+                  <a class="card__link" href="http://gmapsjs.com" target="_blank">
+                    <i class="fa fa-globe"></i>
+                    <div>Website</div>
                   </a>
+                  <a class="card__link" href="https://github.com/tmentink/gmaps" target="_blank">
+                    <i class="fa fa-github"></i>
+                    <div>Github</div>
+                  </a>
+                </div>
+                <div class="card__section">
+                  <h4>About this project</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="card__section">
+                  <h4>Skills & Technologies</h4>
+                  <div id="card__chips" class="card__chips">
+                    <span class="card__chip">Google Maps</span>
+                    <span class="card__chip">API Design</span>
+                    <span class="card__chip">JavaScript</span>
+                    <span class="card__chip">Babel.js</span>
+                    <span class="card__chip">Grunt</span>
+                    <span class="card__chip">ESLint</span>
+                    <span class="card__chip">HTML5</span>
+                    <span class="card__chip">Semantic-UI</span>
+                    <span class="card__chip">Algolia DocSearch</span>
+                    <span class="card__chip">Middleman</span>
+                    <span class="card__chip">CSS3</span>
+                    <span class="card__chip">Sass</span>
+                  </div>
                 </div>
               </div>
 
               <div class="card">
                 <i class="card__close fa fa-times"></i>
-                <img class="card__img" src="img/projects/jquery_geocomplete.jpg">
-                <div class="card__header">
-                  <div class="card__title">jQuery Geocomplete</div>
-                  <div class="card__subtitle">JavaScript</div>
-                </div>
-                <div class="card__body">
-                  A jQuery plugin for the Google Maps Autocomplete control.
-                  The plugin fixes some annoying layout bugs and provides extended functionality. 
-                  <a class="card__button" href="https://github.com/tmentink/jquery.geocomplete" target="_blank">
-                    View Website
+                <img class="card__img" src="img/projects/jquery_geocomplete.png">
+                <div class="card__links">
+                  <a class="card__link" href="http://projects.trentmentink.com/jquery_geocomplete/" target="_blank">
+                    <i class="fa fa-globe"></i>
+                    <div>Website</div>
+                  </a>
+                  <a class="card__link" href="https://github.com/tmentink/jquery.geocomplete" target="_blank">
+                    <i class="fa fa-github"></i>
+                    <div>Github</div>
                   </a>
                 </div>
-              </div>
-
-              <div class="card">
-                <i class="card__close fa fa-times"></i>
-                <img class="card__img" src="img/projects/poly_split.jpg">
-                <div class="card__header">
-                  <div class="card__title">Poly-Split</div>
-                  <div class="card__subtitle">JavaScript</div>
+                <div class="card__section">
+                  <h4>About this project</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div>
-                <div class="card__body">
-                  A Google Maps plugin that extends the polygon overlay with a new method to easily split it in two.
-                  Simply draw a polygon over another and then split out the difference.
-                  <a class="card__button" href="https://github.com/tmentink/poly-split" target="_blank">
-                    View Website
-                  </a>
+                <div class="card__section">
+                  <h4>Skills & Technologies</h4>
+                  <div id="card__chips" class="card__chips">
+                    <span class="card__chip">Google Maps</span>
+                    <span class="card__chip">API Design</span>
+                    <span class="card__chip">JavaScript</span>
+                    <span class="card__chip">Babel.js</span>
+                    <span class="card__chip">ESLint</span>
+                    <span class="card__chip">Grunt</span>
+                  </div>
                 </div>
               </div>
 
               <div class="card">
                 <i class="card__close card__close--white fa fa-times"></i>
-                <img class="card__img" src="img/projects/sliding_puzzle.jpg">
-                <div class="card__header">
-                  <div class="card__title">Sliding Puzzle</div>
-                  <div class="card__subtitle">Gaming</div>
-                </div>
-                <div class="card__body">
-                  An HTML5 game that randomly shuffles images into tiles.
-                  If you get stuck, you can watch the AI solve the puzzle in the shortest amount of steps.
-                  All images were created by Kelly N. Hagan.
-                  <a class="card__button" href="http://projects.trentmentink.com/sliding_puzzle/" target="_blank">
-                    Play Game
+                <img class="card__img" src="img/projects/poly_split.png">
+                <div class="card__links">
+                  <a class="card__link" href="http://projects.trentmentink.com/polygon_splitting/" target="_blank">
+                    <i class="fa fa-globe"></i>
+                    <div>Website</div>
+                  </a>
+                  <a class="card__link" href="https://github.com/tmentink/poly-split" target="_blank">
+                    <i class="fa fa-github"></i>
+                    <div>Github</div>
                   </a>
                 </div>
-              </div>
-
-              <div class="card">
-                <i class="card__close fa fa-times"></i>
-                <img class="card__img" src="img/projects/frameshop.jpg">
-                <div class="card__header">
-                  <div class="card__title">The Frameshop</div>
-                  <div class="card__subtitle">Website</div>
+                <div class="card__section">
+                  <h4>About this project</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div>
-                <div class="card__body">
-                  The Frameshop is a family owned business specializing in custom framing.
-                  I worked closely with them to develop a brand new website with a responsive design.
-                  <a class="card__button" href="http://projects.trentmentink.com/frameshop/" target="_blank">
-                    View Website
-                  </a>
+                <div class="card__section">
+                  <h4>Skills & Technologies</h4>
+                  <div id="card__chips" class="card__chips">
+                    <span class="card__chip">Google Maps</span>
+                    <span class="card__chip">JavaScript</span>
+                  </div>
                 </div>
               </div>
 
               <div class="card">
                 <i class="card__close card__close--white fa fa-times"></i>
-                <img class="card__img" src="img/projects/simon_says.jpg">
-                <div class="card__header">
-                  <div class="card__title">Simon Says</div>
-                  <div class="card__subtitle">Gaming</div>
-                </div>
-                <div class="card__body">
-                  Simon Says is a web based game that utilizes HTML5 features like data attributes, audio and local storage.
-                  Test your memory with this fresh take on a classic game.
-                  <a class="card__button" href="http://projects.trentmentink.com/simon_says/" target="_blank">
-                    Play Game
+                <img class="card__img" src="img/projects/sliding_puzzle.png">
+                <div class="card__links">
+                  <a class="card__link" href="http://projects.trentmentink.com/sliding_puzzle/" target="_blank">
+                    <i class="fa fa-gamepad"></i>
+                    <div>Play Game</div>
                   </a>
+                  <a class="card__link" href="https://github.com/tmentink/sliding_puzzle" target="_blank">
+                    <i class="fa fa-github"></i>
+                    <div>Github</div>
+                  </a>
+                </div>
+                <div class="card__section">
+                  <h4>About this project</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="card__section">
+                  <h4>Skills & Technologies</h4>
+                  <div id="card__chips" class="card__chips">
+                    <span class="card__chip">HTML5</span>
+                    <span class="card__chip">JavaScript</span>
+                    <span class="card__chip">Grunt</span>
+                    <span class="card__chip">CSS3</span>
+                    <span class="card__chip">Sass</span>
+                    <span class="card__chip">Gaming</span>
+                    <span class="card__chip">Heuristic Search</span>
+                    <span class="card__chip">Artificial Intellignce</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <i class="card__close fa fa-times"></i>
+                <img class="card__img" src="img/projects/frameshop.png">
+                <div class="card__links">
+                  <a class="card__link" href="http://projects.trentmentink.com/frameshop/" target="_blank">
+                    <i class="fa fa-globe"></i>
+                    <div>Website</div>
+                  </a>
+                  <a class="card__link" href="http://projects.trentmentink.com/frameshop/" target="_blank">
+                    <i class="fa fa-github"></i>
+                    <div>Github</div>
+                  </a>
+                </div>
+                <div class="card__section">
+                  <h4>About this project</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div class="card__section">
+                  <h4>Skills & Technologies</h4>
+                  <div id="card__chips" class="card__chips">
+                    <span class="card__chip">HTML5</span>
+                    <span class="card__chip">JavaScript</span>
+                    <span class="card__chip">Grunt</span>
+                    <span class="card__chip">Responsive Design</span>
+                    <span class="card__chip">CSS3</span>
+                    <span class="card__chip">Sass</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <i class="card__close card__close--white fa fa-times"></i>
+                <img class="card__img" src="img/projects/simon_says.png">
+                <div class="card__links">
+                  <a class="card__link" href="http://projects.trentmentink.com/simon_says/" target="_blank">
+                    <i class="fa fa-gamepad"></i>
+                    <div>Play Game</div>
+                  </a>
+                  <a class="card__link" href="https://github.com/tmentink/simon_says" target="_blank">
+                    <i class="fa fa-github"></i>
+                    <div>Github</div>
+                  </a>
+                </div>
+                <div class="card__section">
+                  <h4>About this project</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div class="card__section">
+                  <h4>Skills & Technologies</h4>
+                  <div id="card__chips" class="card__chips">
+                    <span class="card__chip">HTML5</span>
+                    <span class="card__chip">Audio</span>
+                    <span class="card__chip">JavaScript</span>
+                    <span class="card__chip">Grunt</span>
+                    <span class="card__chip">CSS3</span>
+                    <span class="card__chip">Sass</span>
+                    <span class="card__chip">Gaming</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -260,14 +351,8 @@
         <!-- Card Overlay
         =========================================== -->
         <div id="card-overlay" class="card-overlay">
-          <div id="card-overlay__content" class="card-overlay__content">
-            <div id="card-placeholder" class="card card--hidden">
-              <img class="card__img" src="img/projects/gmaps.jpg">
-              <div class="card__header">
-                <div class="card__title">gmaps.js</div>
-                <div class="card__subtitle">JavaScript</div>
-              </div>
-            </div>
+          <div class="card-overlay__content">
+            <div id="expanded-card" class="card"></div>
           </div>
         </div>
 
@@ -360,6 +445,6 @@
       <script type="text/javascript" src="vendor/velocity.min.js" defer></script>
       <script type="text/javascript" src="vendor/typeit.min.js" defer></script>
       <script type="text/javascript" src="vendor/bowser.min.js" defer></script>
-      <script type="text/javascript" src="js/main.js?v=1.2.0" defer></script>
+      <script type="text/javascript" src="js/main.js?v=1.3.0" defer></script>
     </body>
 </html>
