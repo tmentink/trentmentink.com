@@ -65,8 +65,9 @@ var Preloader = ((Preloader) => {
   // ----------------------------------------------------------------------
 
   Preloader.init = function() {
-    let percent = 10
+    $cache(Selector.PRELOADER).addClass(ClassName.ACTIVE)
 
+    let percent = 10
     const int = setInterval(() => {
       percent >= 80
         ? percent = 100
