@@ -2,6 +2,8 @@
 // Gruntfile
 // ------------------------------------------------------------------------
 
+const sass = require("node-sass")
+
 module.exports = function(grunt) {
   "use strict"
 
@@ -30,9 +32,9 @@ module.exports = function(grunt) {
     concat: {
       main: {
         src: ["src/js/util/polyfills.js",
-              "src/js/util/**/*.js",
-              "src/js/main/**/*.js",
-             ],
+          "src/js/util/**/*.js",
+          "src/js/main/**/*.js",
+        ],
         dest: "src/js/main.js"
       }
     },
@@ -42,6 +44,7 @@ module.exports = function(grunt) {
     sass: {
       main: {
         options: {
+          implementation: sass,
           outputStyle: "compressed"
         },
         files: {
