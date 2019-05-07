@@ -14,6 +14,7 @@ var About = ((About) => {
   const Selector = {
     BLOCKS        : "#blocks",
     BLOCK_WRAPPER : ".block__wrapper",
+    EXPERIENCE    : "[data-experience]",
     TEXT          : "#about__text"
   }
 
@@ -60,6 +61,12 @@ var About = ((About) => {
     })
   }
 
+  About.calculateExperience = function() {
+    const start = 2015
+    const current = new Date().getFullYear()
+
+    $cache(Selector.EXPERIENCE).html(current - start)
+  }
 
   // ----------------------------------------------------------------------
   // Init
@@ -68,6 +75,7 @@ var About = ((About) => {
   About.init = function() {
     About.addBlocksAnimation()
     About.addTextAnimation()
+    About.calculateExperience()
   }
 
 
